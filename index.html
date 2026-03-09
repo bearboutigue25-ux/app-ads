@@ -95,8 +95,8 @@ b{
 
 .buttons{
   position:fixed;
-  right:8px;
-  bottom:68px;
+  right:10px;
+  bottom:18px;
   display:flex;
   flex-direction:column;
   align-items:flex-end;
@@ -106,31 +106,31 @@ b{
 
 .storeButton{
   text-align:center;
-  margin-bottom:4px;
+  margin-bottom:2px;
   opacity:0;
   animation: pawAppear 0.7s ease-out forwards;
   pointer-events:auto;
 }
 
 .paw1{ transform:translateX(0); animation-delay:0.15s; }
-.paw2{ transform:translateX(-24px); animation-delay:0.45s; }
+.paw2{ transform:translateX(-22px); animation-delay:0.45s; }
 .paw3{ transform:translateX(-4px); animation-delay:0.75s; }
-.paw4{ transform:translateX(-28px); animation-delay:1.05s; }
+.paw4{ transform:translateX(-24px); animation-delay:1.05s; }
 .paw5{ transform:translateX(-6px); animation-delay:1.35s; }
-.paw6{ transform:translateX(-30px); animation-delay:1.65s; }
+.paw6{ transform:translateX(-26px); animation-delay:1.65s; }
 .paw7{ transform:translateX(-8px); animation-delay:1.95s; }
 
 .storeButton img{
-  width:56px;
+  width:50px;
   cursor:pointer;
   display:block;
 }
 
 .storeText{
-  font-size:10px;
+  font-size:9px;
   font-weight:900;
-  margin-top:-3px;
-  line-height:1;
+  margin-top:-5px;
+  line-height:0.9;
   color: rgb(91,47,34);
   text-shadow:
     0 0 5px rgba(255,255,255,0.95),
@@ -153,6 +153,37 @@ b{
   }
 }
 
+/* окремо для великих екранів / MacBook */
+@media (min-width: 901px){
+  .buttons{
+    right:18px;
+    bottom:8px;
+  }
+
+  .storeButton{
+    margin-bottom:1px;
+  }
+
+  .storeButton img{
+    width:46px;
+  }
+
+  .storeText{
+    font-size:8px;
+    margin-top:-6px;
+    line-height:0.88;
+  }
+
+  .paw1{ transform:translateX(0); }
+  .paw2{ transform:translateX(-18px); }
+  .paw3{ transform:translateX(-3px); }
+  .paw4{ transform:translateX(-20px); }
+  .paw5{ transform:translateX(-4px); }
+  .paw6{ transform:translateX(-22px); }
+  .paw7{ transform:translateX(-5px); }
+}
+
+/* телефон лишаємо окремо */
 @media (max-width: 900px){
   .content{
     padding:28px 22px;
@@ -648,6 +679,3 @@ b{
 
 </body>
 </html>
-
-
-
