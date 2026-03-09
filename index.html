@@ -13,11 +13,9 @@ background-color: rgb(255,203,219);
 margin:0;
 color: rgb(91,47,34);
 line-height:1.7;
-padding-bottom:300px;
+padding-bottom:260px;
 font-family:"Marker Felt","Marker Felt Wide","Comic Sans MS",cursive,sans-serif;
 }
-
-/* верхнє меню */
 
 .menu{
 position:fixed;
@@ -39,15 +37,11 @@ font-weight:900;
 color:rgb(91,47,34);
 }
 
-/* верхнє зображення */
-
 .header{
 width:100%;
 margin-top:62px;
 display:block;
 }
-
-/* текст */
 
 .content{
 max-width:900px;
@@ -90,16 +84,16 @@ word-break: break-word;
 }
 
 .separator{
-margin:18px 0;
+text-align:left;
+margin:18px 0 18px 0;
 font-weight:900;
 }
 
-/* кнопки лапки */
-
+/* лапки */
 .buttons{
 position:fixed;
-right:18px;
-bottom:28px;
+right:10px;
+bottom:18px;
 display:flex;
 flex-direction:column;
 align-items:flex-end;
@@ -109,55 +103,70 @@ pointer-events:none;
 
 .storeButton{
 text-align:center;
-margin-bottom:6px;
+margin-bottom:2px;
 opacity:0;
-animation: pawAppear 0.6s ease-out forwards;
+animation:pawAppear 0.7s ease-out forwards;
 pointer-events:auto;
 }
 
-/* позиції лапок */
-
-.paw1{ transform:translateX(0); animation-delay:0.1s; }
-.paw2{ transform:translateX(-26px); animation-delay:0.4s; }
-.paw3{ transform:translateX(-6px); animation-delay:0.7s; }
-.paw4{ transform:translateX(-28px); animation-delay:1.0s; }
-.paw5{ transform:translateX(-8px); animation-delay:1.3s; }
-.paw6{ transform:translateX(-30px); animation-delay:1.6s; }
-.paw7{ transform:translateX(-10px); animation-delay:1.9s; }
-
-/* лапки */
+.paw1{ transform:translateX(0); animation-delay:0.15s; }
+.paw2{ transform:translateX(-22px); animation-delay:0.45s; }
+.paw3{ transform:translateX(-4px); animation-delay:0.75s; }
+.paw4{ transform:translateX(-24px); animation-delay:1.05s; }
+.paw5{ transform:translateX(-6px); animation-delay:1.35s; }
+.paw6{ transform:translateX(-26px); animation-delay:1.65s; }
+.paw7{ transform:translateX(-8px); animation-delay:1.95s; }
 
 .storeButton img{
-width:72px;
-cursor:pointer;
+width:50px;
 display:block;
+cursor:pointer;
 }
-
-/* текст під лапкою */
 
 .storeText{
-font-size:13px;
+font-size:9px;
 font-weight:900;
-margin-top:-2px;
-line-height:1;
+margin-top:-5px;
+line-height:0.9;
 color: rgb(91,47,34);
 text-shadow:
-0 0 6px rgba(255,255,255,0.9),
-0 0 12px rgba(255,255,255,0.9),
-0 0 18px rgba(255,255,255,0.7);
+0 0 5px rgba(255,255,255,0.95),
+0 0 10px rgba(255,255,255,0.9),
+0 0 16px rgba(255,255,255,0.8);
 }
-
-/* поява лапок */
 
 @keyframes pawAppear{
-0%{
-opacity:0;
-transform:scale(0.6);
+0%{opacity:0;filter:blur(3px);}
+60%{opacity:1;filter:blur(0);}
+100%{opacity:1;}
 }
-100%{
-opacity:1;
-transform:scale(1);
+
+/* MAC / великий екран */
+
+@media (min-width:901px){
+
+.buttons{
+right:18px;
+bottom:10px;
 }
+
+.storeButton img{
+width:60px;
+}
+
+.storeText{
+font-size:10px;
+margin-top:-4px;
+}
+
+.paw1{ transform:translateX(0); }
+.paw2{ transform:translateX(-24px); }
+.paw3{ transform:translateX(-4px); }
+.paw4{ transform:translateX(-26px); }
+.paw5{ transform:translateX(-6px); }
+.paw6{ transform:translateX(-28px); }
+.paw7{ transform:translateX(-8px); }
+
 }
 
 /* телефон */
@@ -184,7 +193,7 @@ font-size:15px;
 }
 
 .buttons{
-right:8px;
+right:6px;
 bottom:92px;
 }
 
@@ -194,21 +203,13 @@ width:50px;
 
 .storeText{
 font-size:9px;
+margin-top:-4px;
 }
-
-.paw1{ transform:translateX(0); }
-.paw2{ transform:translateX(-18px); }
-.paw3{ transform:translateX(-3px); }
-.paw4{ transform:translateX(-20px); }
-.paw5{ transform:translateX(-4px); }
-.paw6{ transform:translateX(-22px); }
-.paw7{ transform:translateX(-5px); }
 
 }
 
 </style>
 </head>
-
 
 <body>
 
@@ -218,9 +219,7 @@ font-size:9px;
 <a href="https://bearboutigue.com/app-ads.txt">app-ads.txt</a>
 </div>
 
-
 <img src="ddbb.png" class="header">
-
 
 <div class="content">
 
@@ -242,10 +241,19 @@ font-size:9px;
 
 <p>By using any Bear Boutique app, you agree to the practices described in this Privacy Policy.</p>
 
+<div class="centerTitle">MagicBrushBearBoutigue</div>
+
+<h3>Privacy Policy</h3>
+
+<p><b>Last updated:</b> 18.01.2026</p>
+
+<p>This Privacy Policy describes how MagicBrushBearBoutigue and Notes by Bear Boutique and Music Bears (“the App”, “we”, “us”, or “our”) collects, uses, and protects your information when you use our application.</p>
+
+<p>We are committed to protecting your privacy.</p>
+
+<p>By using the App, you agree to the practices described in this Privacy Policy.</p>
+
 </div>
-
-
-<!-- кнопки лапки -->
 
 <div class="buttons">
 
@@ -264,7 +272,7 @@ font-size:9px;
 </div>
 
 <div class="storeButton paw3">
-<a href="https://www.instagram.com/bear_boutigue?igsh=MXdraDhqazJpMmducA==" target="_blank">
+<a href="https://www.instagram.com/bear_boutigue" target="_blank">
 <img src="zzz.png">
 </a>
 <div class="storeText">Instagram</div>
@@ -295,7 +303,6 @@ font-size:9px;
 </div>
 
 </div>
-
 
 </body>
 </html>
