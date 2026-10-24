@@ -9,13 +9,504 @@
 
 <style>
 
+:root{
+  --pink-bg: rgb(255,203,219);
+  --brown: rgb(91,47,34);
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html,
 body{
-  background-color:rgb(255,203,219);
   margin:0;
-  color:rgb(91,47,34);
+  padding:0;
+  min-height:100%;
+}
+
+body{
+  background-color:var(--pink-bg);
+  color:var(--brown);
   line-height:1.7;
   padding-bottom:260px;
-  font-family:"Marker Felt","Marker Felt Wide","Comic Sans MS",cursive,sans-serif;
+
+  font-family:
+    "Marker Felt",
+    "Marker Felt Wide",
+    "Comic Sans MS",
+    cursive,
+    sans-serif;
+
+  overflow-x:hidden;
+}
+
+
+/* =========================================================
+   DIAMOND STAR BACKGROUND
+   ========================================================= */
+
+#diamondStars{
+  position:fixed;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  overflow:hidden;
+}
+
+
+.sparkle{
+  position:absolute;
+
+  width:2px;
+  height:2px;
+
+  border-radius:50%;
+
+  background:rgba(255,255,255,0.98);
+
+  opacity:0.16;
+
+  box-shadow:
+    0 0 3px rgba(255,255,255,0.95),
+    0 0 7px rgba(255,255,255,0.55);
+
+  animation:
+    diamondTwinkle
+    var(--duration)
+    ease-in-out
+    infinite;
+
+  animation-delay:var(--delay);
+
+  transform:scale(var(--scale));
+}
+
+
+.sparkle.bright{
+  width:3px;
+  height:3px;
+
+  opacity:0.25;
+
+  box-shadow:
+    0 0 5px rgba(255,255,255,1),
+    0 0 12px rgba(255,255,255,1),
+    0 0 22px rgba(255,255,255,0.90),
+    0 0 34px rgba(255,255,255,0.55);
+}
+
+
+.sparkle.star::before,
+.sparkle.star::after{
+  content:"";
+
+  position:absolute;
+
+  left:50%;
+  top:50%;
+
+  background:rgba(255,255,255,1);
+
+  transform:translate(-50%,-50%);
+
+  border-radius:999px;
+
+  box-shadow:
+    0 0 7px rgba(255,255,255,1),
+    0 0 14px rgba(255,255,255,0.85);
+}
+
+
+.sparkle.star::before{
+  width:1.5px;
+  height:13px;
+}
+
+
+.sparkle.star::after{
+  width:13px;
+  height:1.5px;
+}
+
+
+@keyframes diamondTwinkle{
+
+  0%,
+  100%{
+    opacity:0.08;
+    filter:brightness(0.85);
+  }
+
+  32%{
+    opacity:0.20;
+    filter:brightness(1);
+  }
+
+  46%{
+    opacity:0.95;
+    filter:brightness(1.7);
+  }
+
+  50%{
+    opacity:1;
+    filter:brightness(2.1);
+  }
+
+  56%{
+    opacity:0.35;
+    filter:brightness(1.15);
+  }
+
+  74%{
+    opacity:0.12;
+    filter:brightness(0.9);
+  }
+
+}
+
+
+/* =========================================================
+   FLYING BEE STICKERS 🐝
+   ========================================================= */
+
+.beesLayer{
+  position:fixed;
+  inset:0;
+
+  z-index:6;
+
+  pointer-events:none;
+
+  overflow:hidden;
+}
+
+
+.bee{
+  position:absolute;
+
+  line-height:1;
+
+  opacity:0.96;
+
+  user-select:none;
+
+  will-change:transform;
+
+  filter:
+    drop-shadow(
+      0 2px 3px
+      rgba(91,47,34,0.10)
+    )
+    drop-shadow(
+      0 0 5px
+      rgba(255,255,255,0.35)
+    );
+}
+
+
+/* Bee 1 */
+
+.bee1{
+  top:14%;
+  left:-100px;
+
+  font-size:52px;
+
+  animation:
+    beeFlightOne
+    18s
+    linear
+    infinite;
+}
+
+
+/* Bee 2 */
+
+.bee2{
+  top:38%;
+  right:-100px;
+
+  font-size:44px;
+
+  animation:
+    beeFlightTwo
+    22s
+    linear
+    infinite
+    3s;
+}
+
+
+/* Bee 3 */
+
+.bee3{
+  top:68%;
+  left:-100px;
+
+  font-size:58px;
+
+  animation:
+    beeFlightThree
+    25s
+    linear
+    infinite
+    7s;
+}
+
+
+/* Bee 4 */
+
+.bee4{
+  top:27%;
+  left:-110px;
+
+  font-size:40px;
+
+  animation:
+    beeFlightFour
+    28s
+    linear
+    infinite
+    11s;
+}
+
+
+/* Bee 5 */
+
+.bee5{
+  top:82%;
+  right:-100px;
+
+  font-size:48px;
+
+  animation:
+    beeFlightFive
+    24s
+    linear
+    infinite
+    5s;
+}
+
+
+/* =========================================================
+   BEE FLIGHT
+   ========================================================= */
+
+@keyframes beeFlightOne{
+
+  0%{
+    transform:
+      translate3d(0,0,0)
+      rotate(-8deg);
+  }
+
+  18%{
+    transform:
+      translate3d(24vw,-24px,0)
+      rotate(7deg);
+  }
+
+  38%{
+    transform:
+      translate3d(48vw,20px,0)
+      rotate(-5deg);
+  }
+
+  60%{
+    transform:
+      translate3d(74vw,-18px,0)
+      rotate(8deg);
+  }
+
+  82%{
+    transform:
+      translate3d(98vw,18px,0)
+      rotate(-4deg);
+  }
+
+  100%{
+    transform:
+      translate3d(
+        calc(100vw + 160px),
+        -8px,
+        0
+      )
+      rotate(4deg);
+  }
+
+}
+
+
+@keyframes beeFlightTwo{
+
+  0%{
+    transform:
+      translate3d(0,0,0)
+      scaleX(-1)
+      rotate(-5deg);
+  }
+
+  20%{
+    transform:
+      translate3d(-25vw,18px,0)
+      scaleX(-1)
+      rotate(7deg);
+  }
+
+  42%{
+    transform:
+      translate3d(-51vw,-20px,0)
+      scaleX(-1)
+      rotate(-4deg);
+  }
+
+  66%{
+    transform:
+      translate3d(-77vw,14px,0)
+      scaleX(-1)
+      rotate(8deg);
+  }
+
+  100%{
+    transform:
+      translate3d(
+        calc(-100vw - 160px),
+        -14px,
+        0
+      )
+      scaleX(-1)
+      rotate(-5deg);
+  }
+
+}
+
+
+@keyframes beeFlightThree{
+
+  0%{
+    transform:
+      translate3d(0,0,0)
+      rotate(-10deg);
+  }
+
+  24%{
+    transform:
+      translate3d(28vw,25px,0)
+      rotate(6deg);
+  }
+
+  48%{
+    transform:
+      translate3d(54vw,-18px,0)
+      rotate(-5deg);
+  }
+
+  72%{
+    transform:
+      translate3d(80vw,12px,0)
+      rotate(7deg);
+  }
+
+  100%{
+    transform:
+      translate3d(
+        calc(100vw + 170px),
+        -26px,
+        0
+      )
+      rotate(-6deg);
+  }
+
+}
+
+
+@keyframes beeFlightFour{
+
+  0%{
+    transform:
+      translate3d(0,0,0)
+      rotate(-4deg);
+  }
+
+  20%{
+    transform:
+      translate3d(20vw,-30px,0)
+      rotate(8deg);
+  }
+
+  40%{
+    transform:
+      translate3d(42vw,14px,0)
+      rotate(-6deg);
+  }
+
+  64%{
+    transform:
+      translate3d(68vw,-16px,0)
+      rotate(8deg);
+  }
+
+  82%{
+    transform:
+      translate3d(88vw,20px,0)
+      rotate(-5deg);
+  }
+
+  100%{
+    transform:
+      translate3d(
+        calc(100vw + 170px),
+        -8px,
+        0
+      )
+      rotate(5deg);
+  }
+
+}
+
+
+@keyframes beeFlightFive{
+
+  0%{
+    transform:
+      translate3d(0,0,0)
+      scaleX(-1)
+      rotate(-6deg);
+  }
+
+  22%{
+    transform:
+      translate3d(-24vw,-18px,0)
+      scaleX(-1)
+      rotate(7deg);
+  }
+
+  45%{
+    transform:
+      translate3d(-49vw,24px,0)
+      scaleX(-1)
+      rotate(-6deg);
+  }
+
+  70%{
+    transform:
+      translate3d(-76vw,-20px,0)
+      scaleX(-1)
+      rotate(8deg);
+  }
+
+  100%{
+    transform:
+      translate3d(
+        calc(-100vw - 170px),
+        10px,
+        0
+      )
+      scaleX(-1)
+      rotate(-5deg);
+  }
+
 }
 
 
@@ -25,22 +516,36 @@ body{
 
 .menu{
   position:fixed;
+
   top:0;
   left:0;
+
   width:100%;
+
   background:white;
+
   padding:14px 10px;
+
   text-align:center;
+
   z-index:100;
-  box-shadow:0 2px 10px rgba(0,0,0,0.08);
+
+  box-shadow:
+    0 2px 10px
+    rgba(0,0,0,0.08);
 }
+
 
 .menu a{
   margin:0 18px;
+
   text-decoration:none;
+
   font-size:18px;
+
   font-weight:900;
-  color:rgb(91,47,34);
+
+  color:var(--brown);
 }
 
 
@@ -49,8 +554,14 @@ body{
    ========================================================= */
 
 .header{
+  position:relative;
+
+  z-index:10;
+
   width:100%;
+
   margin-top:62px;
+
   display:block;
 }
 
@@ -60,107 +571,142 @@ body{
    ========================================================= */
 
 .content{
+  position:relative;
+
+  z-index:10;
+
   max-width:900px;
+
   margin:auto;
+
   padding:40px 34px;
+
   font-size:18px;
+
   letter-spacing:0.3px;
 }
+
 
 p{
   margin:0 0 22px 0;
 }
 
+
 ul{
   margin:8px 0 24px 28px;
+
   padding-left:20px;
 }
+
 
 li{
   margin-bottom:10px;
 }
 
+
 .centerTitle{
   text-align:center;
+
   font-weight:900;
+
   font-size:30px;
+
   margin:72px 0 34px 0;
-  color:rgb(91,47,34);
+
+  color:var(--brown);
 }
+
 
 h3{
   font-size:22px;
+
   font-weight:900;
+
   margin:34px 0 18px 0;
-  color:rgb(91,47,34);
+
+  color:var(--brown);
 }
 
+
 a{
-  color:rgb(91,47,34);
+  color:var(--brown);
+
   word-break:break-word;
 }
+
 
 strong,
 b{
   font-weight:900;
 }
 
+
 .separator{
   text-align:left;
+
   margin:18px 0;
+
   font-weight:900;
 }
 
 
 /* =========================================================
-   BEAR PAW BUTTONS
+   PAW BUTTONS
    ========================================================= */
 
 .buttons{
   position:fixed;
 
-  top:74px;
-  right:14px;
-  bottom:18px;
+  top:72px;
+
+  right:10px;
+
+  bottom:14px;
 
   display:flex;
+
   flex-direction:column;
+
   justify-content:space-between;
+
   align-items:flex-end;
 
-  z-index:50;
+  z-index:70;
 
   pointer-events:none;
 }
 
 
-/* Окрема лапка */
-
 .storeButton{
   text-align:center;
-  pointer-events:auto;
 
   opacity:0;
 
-  animation:pawAppear 0.65s ease-out forwards;
+  animation:
+    pawAppear
+    0.7s
+    ease-out
+    forwards;
 
-  flex-shrink:1;
+  pointer-events:auto;
+
+  flex:0 1 auto;
+
   min-height:0;
 }
 
 
-/* Шахматне розміщення слідів */
-
 .storeButton:nth-child(odd){
-  transform:translateX(0);
+  transform:
+    translateX(0);
 }
+
 
 .storeButton:nth-child(even){
-  transform:translateX(-34px);
+  transform:
+    translateX(-30px);
 }
 
-
-/* Поява лапок одна за одною */
 
 .storeButton:nth-child(1){
   animation-delay:0.10s;
@@ -207,54 +753,57 @@ b{
 }
 
 
-/* Лапка */
-
 .storeButton img{
-  width:clamp(46px,5.5vh,66px);
-  height:auto;
+  width:
+    clamp(
+      42px,
+      5.1vh,
+      62px
+    );
+
+  max-height:6vh;
 
   cursor:pointer;
 
   display:block;
 
-  margin:0 auto;
+  margin:auto;
+
+  object-fit:contain;
 
   filter:
     drop-shadow(
-      0 0 5px
-      rgba(255,255,255,0.60)
+      0 0 6px
+      rgba(255,255,255,0.50)
     );
 }
 
 
-/* Назва під лапкою */
-
 .storeText{
-  font-size:10px;
+  font-size:9px;
+
   font-weight:900;
 
   margin-top:-4px;
 
-  line-height:0.95;
+  line-height:0.92;
 
   white-space:nowrap;
 
-  color:rgb(91,47,34);
+  color:var(--brown);
 
   text-shadow:
-    0 0 4px rgba(255,255,255,1),
-    0 0 8px rgba(255,255,255,1),
-    0 0 14px rgba(255,255,255,0.95);
+    0 0 5px rgba(255,255,255,1),
+    0 0 10px rgba(255,255,255,0.95),
+    0 0 16px rgba(255,255,255,0.85);
 }
 
-
-/* Анімація */
 
 @keyframes pawAppear{
 
   0%{
     opacity:0;
-    filter:blur(4px);
+    filter:blur(3px);
   }
 
   60%{
@@ -266,6 +815,7 @@ b{
     opacity:1;
     filter:blur(0);
   }
+
 }
 
 
@@ -276,22 +826,53 @@ b{
 @media (min-width:901px){
 
   .buttons{
+    right:20px;
     top:76px;
-    right:22px;
     bottom:22px;
   }
 
+
   .storeButton:nth-child(even){
-    transform:translateX(-38px);
+    transform:
+      translateX(-38px);
   }
+
 
   .storeButton img{
-    width:clamp(50px,5.6vh,68px);
+    width:
+      clamp(
+        48px,
+        5.4vh,
+        66px
+      );
   }
 
+
   .storeText{
-    font-size:10px;
+    font-size:9px;
   }
+
+
+  .bee1{
+    font-size:58px;
+  }
+
+  .bee2{
+    font-size:48px;
+  }
+
+  .bee3{
+    font-size:64px;
+  }
+
+  .bee4{
+    font-size:44px;
+  }
+
+  .bee5{
+    font-size:52px;
+  }
+
 }
 
 
@@ -303,72 +884,201 @@ b{
 
   .content{
     padding:28px 22px;
+
     font-size:18px;
   }
 
+
   .centerTitle{
     font-size:28px;
+
     margin:60px 0 28px 0;
   }
+
 
   h3{
     font-size:24px;
   }
 
-  .menu a{
-    margin:0 10px;
-    font-size:15px;
+
+  .menu{
+    padding:12px 6px;
   }
+
+
+  .menu a{
+    margin:0 7px;
+
+    font-size:14px;
+  }
+
+
+  .header{
+    margin-top:56px;
+  }
+
 
   .buttons{
-    top:72px;
-    right:6px;
-    bottom:16px;
+    right:4px;
+
+    top:66px;
+
+    bottom:12px;
   }
+
 
   .storeButton:nth-child(even){
-    transform:translateX(-26px);
+    transform:
+      translateX(-24px);
   }
+
 
   .storeButton img{
-    width:clamp(42px,5.2vh,55px);
+    width:
+      clamp(
+        38px,
+        4.8vh,
+        52px
+      );
+
+    max-height:5.6vh;
   }
 
+
   .storeText{
-    font-size:8.5px;
+    font-size:7.8px;
+
     margin-top:-3px;
   }
+
+
+  .bee1{
+    font-size:46px;
+  }
+
+  .bee2{
+    font-size:38px;
+  }
+
+  .bee3{
+    font-size:50px;
+  }
+
+  .bee4{
+    font-size:36px;
+  }
+
+  .bee5{
+    font-size:42px;
+  }
+
 }
 
 
-/* Низькі екрани */
+/* =========================================================
+   VERY LOW SCREENS
+   ========================================================= */
 
-@media (max-height:760px){
+@media (max-height:720px){
 
   .buttons{
-    top:68px;
-    bottom:8px;
+    top:62px;
+
+    bottom:7px;
   }
+
 
   .storeButton img{
-    width:40px;
+    width:36px;
+
+    max-height:4.8vh;
   }
 
+
   .storeText{
-    font-size:7.5px;
+    font-size:6.8px;
+
     margin-top:-3px;
   }
 
+
   .storeButton:nth-child(even){
-    transform:translateX(-22px);
+    transform:
+      translateX(-20px);
   }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion:reduce){
+
+  .sparkle{
+    animation:none;
+    opacity:0.35;
+  }
+
+
+  .bee{
+    display:none;
+  }
+
+
+  .storeButton{
+    animation:none;
+    opacity:1;
+  }
+
 }
 
 </style>
+
 </head>
 
 
 <body>
+
+
+<!-- =======================================================
+     DIAMOND STARS
+     ======================================================= -->
+
+<div id="diamondStars"></div>
+
+
+<!-- =======================================================
+     FLYING BEE STICKERS 🐝
+     ======================================================= -->
+
+<div
+  class="beesLayer"
+  aria-hidden="true"
+>
+
+  <div class="bee bee1">
+    🐝
+  </div>
+
+  <div class="bee bee2">
+    🐝
+  </div>
+
+  <div class="bee bee3">
+    🐝
+  </div>
+
+  <div class="bee bee4">
+    🐝
+  </div>
+
+  <div class="bee bee5">
+    🐝
+  </div>
+
+</div>
 
 
 <!-- =======================================================
@@ -507,7 +1217,9 @@ b{
   </p>
 
 
-  <div class="separator">⸻</div>
+  <div class="separator">
+    ⸻
+  </div>
 
 
   <h3>
@@ -570,7 +1282,9 @@ b{
   </p>
 
 
-  <div class="separator">⸻</div>
+  <div class="separator">
+    ⸻
+  </div>
 
 
   <h3>
@@ -612,7 +1326,9 @@ b{
   </p>
 
 
-  <div class="separator">⸻</div>
+  <div class="separator">
+    ⸻
+  </div>
 
 
   <h3>
@@ -668,7 +1384,9 @@ b{
   </ul>
 
 
-  <div class="separator">⸻</div>
+  <div class="separator">
+    ⸻
+  </div>
 
 
   <h3>
@@ -687,7 +1405,9 @@ b{
   </p>
 
 
-  <div class="separator">⸻</div>
+  <div class="separator">
+    ⸻
+  </div>
 
 
   <h3>
@@ -718,7 +1438,9 @@ b{
   </p>
 
 
-  <div class="separator">⸻</div>
+  <div class="separator">
+    ⸻
+  </div>
 
 
   <h3>
@@ -738,7 +1460,9 @@ b{
   </p>
 
 
-  <div class="separator">⸻</div>
+  <div class="separator">
+    ⸻
+  </div>
 
 
   <h3>
@@ -758,7 +1482,9 @@ b{
   </p>
 
 
-  <div class="separator">⸻</div>
+  <div class="separator">
+    ⸻
+  </div>
 
 
   <h3>
@@ -775,6 +1501,7 @@ b{
 
   <p>
     Email:
+
     <a href="mailto:bearboutigue25@gmail.com">
       bearboutigue25@gmail.com
     </a>
@@ -783,6 +1510,7 @@ b{
 
   <p>
     Instagram:
+
     <a
       href="https://www.instagram.com/bear_boutigue?cplk=MXdraDhqazJpMmducA=="
       target="_blank"
@@ -794,6 +1522,7 @@ b{
 
   <p>
     Designer:
+
     <a
       href="https://www.instagram.com/author_olha_smulska?vrfl=MWprM2xoMnFheGRtag=="
       target="_blank"
@@ -843,7 +1572,9 @@ b{
   </p>
 
 
-  <div class="separator">⸻</div>
+  <div class="separator">
+    ⸻
+  </div>
 
 
   <h3>
@@ -869,17 +1600,29 @@ b{
       (name, email address, phone number, postal address)
     </li>
 
-    <li>Financial information</li>
+    <li>
+      Financial information
+    </li>
 
-    <li>Location data</li>
+    <li>
+      Location data
+    </li>
 
-    <li>Contact lists</li>
+    <li>
+      Contact lists
+    </li>
 
-    <li>Browsing history</li>
+    <li>
+      Browsing history
+    </li>
 
-    <li>Advertising identifiers</li>
+    <li>
+      Advertising identifiers
+    </li>
 
-    <li>Analytics data</li>
+    <li>
+      Analytics data
+    </li>
 
     <li>
       Any data stored on your device outside of the App
@@ -894,7 +1637,9 @@ b{
   </p>
 
 
-  <div class="separator">⸻</div>
+  <div class="separator">
+    ⸻
+  </div>
 
 
   <h3>
@@ -921,7 +1666,9 @@ b{
   </p>
 
 
-  <div class="separator">⸻</div>
+  <div class="separator">
+    ⸻
+  </div>
 
 
   <h3>
@@ -935,7 +1682,9 @@ b{
   </p>
 
 
-  <div class="separator">⸻</div>
+  <div class="separator">
+    ⸻
+  </div>
 
 
   <h3>
@@ -954,7 +1703,9 @@ b{
   </p>
 
 
-  <div class="separator">⸻</div>
+  <div class="separator">
+    ⸻
+  </div>
 
 
   <h3>
@@ -985,7 +1736,9 @@ b{
   </p>
 
 
-  <div class="separator">⸻</div>
+  <div class="separator">
+    ⸻
+  </div>
 
 
   <h3>
@@ -1001,12 +1754,13 @@ b{
 
 
   <p>
-    All content remains securely
-    on the user’s device.
+    All content remains securely on the user’s device.
   </p>
 
 
-  <div class="separator">⸻</div>
+  <div class="separator">
+    ⸻
+  </div>
 
 
   <h3>
@@ -1026,7 +1780,9 @@ b{
   </p>
 
 
-  <div class="separator">⸻</div>
+  <div class="separator">
+    ⸻
+  </div>
 
 
   <h3>
@@ -1043,6 +1799,7 @@ b{
 
   <p>
     Email:
+
     <a href="mailto:bearboutigue25@gmail.com">
       bearboutigue25@gmail.com
     </a>
@@ -1051,6 +1808,7 @@ b{
 
   <p>
     Instagram:
+
     <a
       href="https://www.instagram.com/bear_boutigue?cplk=MXdraDhqazJpMmducA=="
       target="_blank"
@@ -1062,6 +1820,7 @@ b{
 
   <p>
     Designer:
+
     <a
       href="https://www.instagram.com/author_olha_smulska?vrfl=MWprM2xoMnFheGRtag=="
       target="_blank"
@@ -1111,7 +1870,9 @@ b{
   </p>
 
 
-  <div class="separator">⸻</div>
+  <div class="separator">
+    ⸻
+  </div>
 
 
   <h3>
@@ -1137,13 +1898,21 @@ b{
       (name, email address, phone number, postal address)
     </li>
 
-    <li>Financial information</li>
+    <li>
+      Financial information
+    </li>
 
-    <li>Advertising identifiers</li>
+    <li>
+      Advertising identifiers
+    </li>
 
-    <li>Browsing history</li>
+    <li>
+      Browsing history
+    </li>
 
-    <li>Tracking or analytics data</li>
+    <li>
+      Tracking or analytics data
+    </li>
 
   </ul>
 
@@ -1153,7 +1922,9 @@ b{
   </p>
 
 
-  <div class="separator">⸻</div>
+  <div class="separator">
+    ⸻
+  </div>
 
 
   <h3>
@@ -1172,24 +1943,17 @@ b{
 
     <li>draw and create illustrations</li>
 
-    <li>
-      save drawings only to the device’s photo gallery
-    </li>
+    <li>save drawings only to the device’s photo gallery</li>
 
-    <li>
-      view a built-in gallery of bear illustrations
-    </li>
+    <li>view a built-in gallery of bear illustrations</li>
 
-    <li>
-      store notes using cloud synchronization (iCloud)
-    </li>
+    <li>store notes using cloud synchronization (iCloud)</li>
 
   </ul>
 
 
   <p>
-    All notes, drawings,
-    and content belong to the user.
+    All notes, drawings, and content belong to the user.
   </p>
 
 
@@ -1199,7 +1963,9 @@ b{
   </p>
 
 
-  <div class="separator">⸻</div>
+  <div class="separator">
+    ⸻
+  </div>
 
 
   <h3>
@@ -1221,13 +1987,11 @@ b{
     </li>
 
     <li>
-      Camera — when the user chooses
-      to take photos for notes
+      Camera — when the user chooses to take photos for notes
     </li>
 
     <li>
-      Photo Gallery — to save drawings
-      created in the App
+      Photo Gallery — to save drawings created in the App
     </li>
 
   </ul>
@@ -1239,7 +2003,9 @@ b{
   </p>
 
 
-  <div class="separator">⸻</div>
+  <div class="separator">
+    ⸻
+  </div>
 
 
   <h3>
@@ -1260,12 +2026,13 @@ b{
 
 
   <p>
-    We do not have access
-    to users’ iCloud data.
+    We do not have access to users’ iCloud data.
   </p>
 
 
-  <div class="separator">⸻</div>
+  <div class="separator">
+    ⸻
+  </div>
 
 
   <h3>
@@ -1284,7 +2051,9 @@ b{
   </p>
 
 
-  <div class="separator">⸻</div>
+  <div class="separator">
+    ⸻
+  </div>
 
 
   <h3>
@@ -1309,12 +2078,14 @@ b{
 
 
   <p>
-    The App relies only on Apple system services,
-    such as iCloud.
+    The App relies only on Apple system services
+    (such as iCloud).
   </p>
 
 
-  <div class="separator">⸻</div>
+  <div class="separator">
+    ⸻
+  </div>
 
 
   <h3>
@@ -1334,7 +2105,9 @@ b{
   </p>
 
 
-  <div class="separator">⸻</div>
+  <div class="separator">
+    ⸻
+  </div>
 
 
   <h3>
@@ -1354,7 +2127,9 @@ b{
   </p>
 
 
-  <div class="separator">⸻</div>
+  <div class="separator">
+    ⸻
+  </div>
 
 
   <h3>
@@ -1371,6 +2146,7 @@ b{
 
   <p>
     Email:
+
     <a href="mailto:bearboutigue25@gmail.com">
       bearboutigue25@gmail.com
     </a>
@@ -1379,6 +2155,7 @@ b{
 
   <p>
     Instagram:
+
     <a
       href="https://www.instagram.com/bear_boutigue?cplk=MXdraDhqazJpMmducA=="
       target="_blank"
@@ -1390,6 +2167,7 @@ b{
 
   <p>
     Designer:
+
     <a
       href="https://www.instagram.com/author_olha_smulska?vrfl=MWprM2xoMnFheGRtag=="
       target="_blank"
@@ -1402,46 +2180,39 @@ b{
 </div>
 
 
-
 <!-- =======================================================
-     RIGHT SIDE BEAR PAW BUTTONS
+     RIGHT PAW TRAIL
      ======================================================= -->
 
 <div class="buttons">
 
 
- <!-- Bear Power Music -->
+  <div class="storeButton">
 
-<div class="storeButton">
-
-  <a
-    href="https://apps.apple.com/ua/app/bear-power-music/id6764355508?l=uk"
-    target="_blank"
-    aria-label="Bear Power Music"
-  >
-
-    <img
-      src="zzz.png"
-      alt="Bear Power Music"
+    <a
+      href="https://apps.apple.com/ua/app/bear-power-music/id6764355508?l=uk"
+      target="_blank"
+      aria-label="Bear Power Music"
     >
 
-  </a>
+      <img
+        src="zzz.png"
+        alt="Bear Power Music"
+      >
 
-  <div class="storeText">
-    Bear Power Music
+    </a>
+
+    <div class="storeText">
+      Bear Power Music
+    </div>
+
   </div>
 
-</div>
-
-  
-
-  <!-- Bear's Notes -->
 
   <div class="storeButton">
 
     <a
       href="#"
-      target="_blank"
       aria-label="Bear's Notes"
     >
 
@@ -1459,14 +2230,10 @@ b{
   </div>
 
 
-
-  <!-- My Cutie Diary -->
-
   <div class="storeButton">
 
     <a
       href="#"
-      target="_blank"
       aria-label="My Cutie Diary"
     >
 
@@ -1483,12 +2250,6 @@ b{
 
   </div>
 
-
-
-  <!-- Baby Bear Art
-       Це колишній MagicBrushBearBoutigue,
-       тому посилання залишене те саме.
-  -->
 
   <div class="storeButton">
 
@@ -1512,9 +2273,6 @@ b{
   </div>
 
 
-
-  <!-- Music Bears -->
-
   <div class="storeButton">
 
     <a
@@ -1536,9 +2294,6 @@ b{
 
   </div>
 
-
-
-  <!-- Magic Bear Tales -->
 
   <div class="storeButton">
 
@@ -1562,9 +2317,6 @@ b{
   </div>
 
 
-
-  <!-- Bear Alarm & Calendar -->
-
   <div class="storeButton">
 
     <a
@@ -1586,9 +2338,6 @@ b{
 
   </div>
 
-
-
-  <!-- Instagram Bear Boutigue -->
 
   <div class="storeButton">
 
@@ -1612,9 +2361,6 @@ b{
   </div>
 
 
-
-  <!-- Designer -->
-
   <div class="storeButton">
 
     <a
@@ -1637,9 +2383,6 @@ b{
   </div>
 
 
-
-  <!-- Pinterest -->
-
   <div class="storeButton">
 
     <a
@@ -1661,9 +2404,6 @@ b{
 
   </div>
 
-
-
-  <!-- YouTube -->
 
   <div class="storeButton">
 
@@ -1688,6 +2428,139 @@ b{
 
 
 </div>
+
+
+<!-- =======================================================
+     DIAMOND STAR GENERATOR
+     ======================================================= -->
+
+<script>
+
+(function(){
+
+  const container =
+    document.getElementById(
+      "diamondStars"
+    );
+
+
+  if(!container){
+    return;
+  }
+
+
+  const totalStars =
+    window.innerWidth <= 600
+      ? 120
+      : 200;
+
+
+  for(
+    let i = 0;
+    i < totalStars;
+    i++
+  ){
+
+    const star =
+      document.createElement(
+        "span"
+      );
+
+
+    star.className =
+      "sparkle";
+
+
+    const random =
+      Math.random();
+
+
+    if(
+      random > 0.82
+    ){
+      star.classList.add(
+        "bright"
+      );
+    }
+
+
+    if(
+      random > 0.94
+    ){
+      star.classList.add(
+        "star"
+      );
+    }
+
+
+    star.style.left =
+      (
+        Math.random()
+        * 100
+      )
+      + "%";
+
+
+    star.style.top =
+      (
+        Math.random()
+        * 100
+      )
+      + "%";
+
+
+    star.style.setProperty(
+
+      "--duration",
+
+      (
+        2.8
+        +
+        Math.random()
+        * 6.5
+      )
+      + "s"
+
+    );
+
+
+    star.style.setProperty(
+
+      "--delay",
+
+      (
+        -Math.random()
+        * 10
+      )
+      + "s"
+
+    );
+
+
+    star.style.setProperty(
+
+      "--scale",
+
+      (
+        0.55
+        +
+        Math.random()
+        * 1.8
+      )
+      .toFixed(2)
+
+    );
+
+
+    container.appendChild(
+      star
+    );
+
+  }
+
+})();
+
+</script>
 
 
 </body>
