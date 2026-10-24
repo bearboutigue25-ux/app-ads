@@ -1,110 +1,1505 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
-<title>Terms of Use — Bear Boutique</title>
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+Terms of Use — Bear Boutigue
+</title>
 
 <style>
 
-body{
-background-color: rgb(255,203,219);
-margin:0;
-font-family: "Marker Felt", Arial;
-color: rgb(91,47,34);
-line-height:1.6;
+:root{
+  --pink-bg: rgb(255,203,219);
+  --brown: rgb(91,47,34);
 }
 
+*{
+  box-sizing:border-box;
+}
+
+html,
+body{
+  margin:0;
+  padding:0;
+  min-height:100%;
+}
+
+body{
+  background-color:var(--pink-bg);
+  margin:0;
+
+  font-family:
+    "Marker Felt",
+    "Marker Felt Wide",
+    Arial,
+    sans-serif;
+
+  color:var(--brown);
+
+  line-height:1.7;
+
+  overflow-x:hidden;
+}
+
+
+/* =========================================================
+   DIAMOND STAR BACKGROUND
+   ========================================================= */
+
+#diamondStars{
+  position:fixed;
+  inset:0;
+
+  z-index:1;
+
+  pointer-events:none;
+
+  overflow:hidden;
+}
+
+.sparkle{
+  position:absolute;
+
+  width:2px;
+  height:2px;
+
+  border-radius:50%;
+
+  background:rgba(255,255,255,0.98);
+
+  opacity:0.16;
+
+  box-shadow:
+    0 0 3px rgba(255,255,255,0.95),
+    0 0 7px rgba(255,255,255,0.55);
+
+  animation:
+    diamondTwinkle
+    var(--duration)
+    ease-in-out
+    infinite;
+
+  animation-delay:var(--delay);
+
+  transform:scale(var(--scale));
+}
+
+.sparkle.bright{
+  width:3px;
+  height:3px;
+
+  opacity:0.25;
+
+  box-shadow:
+    0 0 5px rgba(255,255,255,1),
+    0 0 12px rgba(255,255,255,1),
+    0 0 22px rgba(255,255,255,0.90),
+    0 0 34px rgba(255,255,255,0.55);
+}
+
+.sparkle.star::before,
+.sparkle.star::after{
+  content:"";
+
+  position:absolute;
+
+  left:50%;
+  top:50%;
+
+  background:rgba(255,255,255,1);
+
+  transform:translate(-50%,-50%);
+
+  border-radius:999px;
+
+  box-shadow:
+    0 0 7px rgba(255,255,255,1),
+    0 0 14px rgba(255,255,255,0.85);
+}
+
+.sparkle.star::before{
+  width:1.5px;
+  height:13px;
+}
+
+.sparkle.star::after{
+  width:13px;
+  height:1.5px;
+}
+
+@keyframes diamondTwinkle{
+
+  0%,
+  100%{
+    opacity:0.08;
+    filter:brightness(0.85);
+  }
+
+  32%{
+    opacity:0.20;
+    filter:brightness(1);
+  }
+
+  46%{
+    opacity:0.95;
+    filter:brightness(1.7);
+  }
+
+  50%{
+    opacity:1;
+    filter:brightness(2.1);
+  }
+
+  56%{
+    opacity:0.35;
+    filter:brightness(1.15);
+  }
+
+  74%{
+    opacity:0.12;
+    filter:brightness(0.9);
+  }
+
+}
+
+
+/* =========================================================
+   FLYING BEE.PNG
+   15 великих повільних бджіл
+   ========================================================= */
+
+.beesLayer{
+  position:fixed;
+  inset:0;
+
+  z-index:6;
+
+  pointer-events:none;
+
+  overflow:hidden;
+}
+
+.bee{
+  position:absolute;
+
+  left:0;
+  top:0;
+
+  height:auto;
+
+  opacity:0.97;
+
+  user-select:none;
+
+  pointer-events:none;
+
+  will-change:transform;
+
+  filter:
+    drop-shadow(
+      0 2px 3px
+      rgba(91,47,34,0.14)
+    )
+    drop-shadow(
+      0 0 6px
+      rgba(255,255,255,0.35)
+    );
+}
+
+.bee.small{
+  width:58px;
+}
+
+.bee.medium{
+  width:76px;
+}
+
+.bee.large{
+  width:96px;
+}
+
+
+/* =========================================================
+   TERMS CONTENT
+   ========================================================= */
+
 .content{
-max-width:900px;
-margin:auto;
-padding:60px 40px;
+  position:relative;
+
+  z-index:10;
+
+  max-width:900px;
+
+  margin:auto;
+
+  padding:60px 40px 100px 40px;
 }
 
 .title{
-text-align:center;
-font-size:34px;
-font-weight:bold;
-margin-bottom:50px;
+  text-align:center;
+
+  font-size:34px;
+
+  font-weight:bold;
+
+  margin-bottom:15px;
+}
+
+.updated{
+  text-align:center;
+
+  font-size:16px;
+
+  margin-bottom:50px;
 }
 
 .sectionTitle{
-font-size:24px;
-font-weight:bold;
-margin-top:40px;
+  font-size:24px;
+
+  font-weight:bold;
+
+  margin-top:42px;
+
+  margin-bottom:15px;
 }
 
 p{
-margin:15px 0;
+  margin:15px 0;
+}
+
+ul{
+  margin:15px 0 20px 25px;
+
+  padding-left:20px;
+}
+
+li{
+  margin-bottom:10px;
 }
 
 a{
-color: rgb(91,47,34);
-font-weight:bold;
+  color:var(--brown);
+
+  font-weight:bold;
+
+  word-break:break-word;
+}
+
+
+/* =========================================================
+   MACBOOK / LAPTOP / DESKTOP
+   ========================================================= */
+
+@media (min-width:901px){
+
+  .bee.small{
+    width:64px;
+  }
+
+  .bee.medium{
+    width:84px;
+  }
+
+  .bee.large{
+    width:108px;
+  }
+
+}
+
+
+/* =========================================================
+   PHONE / TABLET
+   ========================================================= */
+
+@media (max-width:900px){
+
+  .content{
+    padding:
+      45px
+      24px
+      90px
+      24px;
+  }
+
+  .title{
+    font-size:30px;
+  }
+
+  .sectionTitle{
+    font-size:22px;
+  }
+
+  .bee.small{
+    width:48px;
+  }
+
+  .bee.medium{
+    width:64px;
+  }
+
+  .bee.large{
+    width:82px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion:reduce){
+
+  .sparkle{
+    animation:none;
+
+    opacity:0.35;
+  }
+
+  .bee{
+    display:none;
+  }
+
 }
 
 </style>
 
 </head>
 
+
 <body>
 
+
+<!-- =======================================================
+     DIAMOND STARS
+     ======================================================= -->
+
+<div id="diamondStars"></div>
+
+
+<!-- =======================================================
+     15 FLYING BEES
+     ======================================================= -->
+
+<div
+  class="beesLayer"
+  id="beesLayer"
+  aria-hidden="true"
+></div>
+
+
+<!-- =======================================================
+     TERMS OF USE
+     ======================================================= -->
+
 <div class="content">
+
 
 <div class="title">
 Terms of Use
 </div>
 
-<p>
-My Cutie Diary, Bear’s Notes, Baby Bear Art, Bear Alarm & Calendar, Music Bears, Bear Power Music, Magic Bear Tales, is an app designed for listening to music and creating a cozy atmosphere.
-Some features of the app are available only with a premium subscription.
-</p>
 
-<div class="sectionTitle">
-Subscription
+<div class="updated">
+Last updated: October 24, 2026
 </div>
 
+
 <p>
-The app uses an auto-renewable subscription.
-Payment will be charged to your Apple ID after the free trial period ends or after confirmation of purchase.
-The subscription automatically renews unless it is canceled at least 24 hours before the end of the current period.
+These Terms of Use apply to applications and digital services
+provided under the Bear Boutigue brand, including:
 </p>
+
+
+<ul>
+
+  <li>My Cutie Diary</li>
+
+  <li>Bear's Notes</li>
+
+  <li>Baby Bear Art</li>
+
+  <li>Bear Alarm &amp; Calendar</li>
+
+  <li>Music Bears</li>
+
+  <li>Bear Power Music</li>
+
+  <li>Magic Bear Tales</li>
+
+</ul>
+
+
+<p>
+By downloading, accessing, purchasing,
+subscribing to, or using a Bear Boutigue application,
+you agree to these Terms of Use
+and to Apple's applicable terms and conditions.
+</p>
+
+
 
 <div class="sectionTitle">
-Subscription Cancellation
+1. About Bear Boutigue Apps
 </div>
 
+
 <p>
-Users can manage or cancel their subscription at any time in their Apple ID settings:
+Bear Boutigue creates applications for personal memories,
+notes, creativity, planning, music,
+children's activities, and digital stories.
 </p>
+
+
+<p>
+Features differ between applications
+and may also differ depending on the device,
+operating system,
+country or region,
+and version of the application.
+</p>
+
+
+
+<div class="sectionTitle">
+2. Subscriptions
+</div>
+
+
+<p>
+Some Bear Boutigue applications
+or premium features require an auto-renewable subscription.
+</p>
+
+
+<p>
+Available subscription periods and prices
+may differ between applications
+and are displayed in the App Store
+before purchase.
+</p>
+
+
+<p>
+Payment is charged to your Apple ID
+upon confirmation of purchase.
+</p>
+
+
+<p>
+If an eligible subscription includes a free trial,
+payment will be charged after the free trial ends
+unless the subscription is canceled
+before the trial period expires.
+</p>
+
+
+<p>
+Subscriptions automatically renew
+unless auto-renewal is turned off
+at least 24 hours before the end
+of the current subscription period.
+</p>
+
+
+<p>
+Your Apple ID account may be charged
+for renewal within 24 hours
+before the end of the current period.
+</p>
+
+
+
+<div class="sectionTitle">
+3. Subscription Cancellation
+</div>
+
+
+<p>
+You can manage or cancel subscriptions
+through your Apple account settings:
+</p>
+
 
 <p>
 Settings → Apple ID → Subscriptions
 </p>
 
+
 <p>
-After cancellation, the subscription will remain active until the end of the current billing period.
+After cancellation,
+access to subscription features
+normally remains available
+until the end of the already paid billing period,
+unless otherwise determined by Apple.
 </p>
+
+
 
 <div class="sectionTitle">
-License Agreement
+4. Free Applications
 </div>
 
-<p>
-The Music Bears app uses Apple’s standard license agreement:
-</p>
 
 <p>
-Apple Standard End User License Agreement (EULA)
+Not every Bear Boutigue application
+requires a paid subscription.
 </p>
 
+
 <p>
-<a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">
+Baby Bear Art is currently provided
+as a free application
+without advertising
+and without a subscription requirement.
+</p>
+
+
+<p>
+Bear Boutigue may update,
+add,
+remove,
+or change features in its applications
+in future versions.
+</p>
+
+
+
+<div class="sectionTitle">
+5. Purchases and Payments
+</div>
+
+
+<p>
+Subscriptions and other purchases made through Bear Boutigue apps
+are processed by Apple through the App Store.
+</p>
+
+
+<p>
+Bear Boutigue does not directly process
+or store users' payment card information.
+</p>
+
+
+<p>
+Prices,
+billing,
+renewals,
+refund eligibility,
+and payment processing
+are subject to Apple's applicable App Store terms and policies.
+</p>
+
+
+
+<div class="sectionTitle">
+6. Refunds
+</div>
+
+
+<p>
+Payments made through the App Store
+are processed by Apple.
+</p>
+
+
+<p>
+Requests for refunds
+are handled according to Apple's policies
+and must be submitted through Apple
+where applicable.
+</p>
+
+
+
+<div class="sectionTitle">
+7. User Content
+</div>
+
+
+<p>
+Some Bear Boutigue applications allow users
+to create or store content,
+including notes,
+memories,
+drawings,
+audio,
+photos,
+videos,
+documents,
+calendar information,
+or other files.
+</p>
+
+
+<p>
+You retain ownership of the content
+you create or add to the applications.
+</p>
+
+
+<p>
+You are responsible for ensuring
+that content you create,
+upload,
+import,
+share,
+or store
+does not violate applicable laws
+or the rights of other people.
+</p>
+
+
+<p>
+Where supported,
+user content may be stored locally
+on the user's device
+or synchronized through Apple iCloud.
+</p>
+
+
+
+<div class="sectionTitle">
+8. Music and Imported Files
+</div>
+
+
+<p>
+Some Bear Boutigue applications
+allow users to import,
+organize,
+play,
+or share audio files.
+</p>
+
+
+<p>
+You are responsible for ensuring
+that you have the necessary rights
+to use,
+store,
+play,
+or share any music,
+audio,
+or other files
+that you import into an application.
+</p>
+
+
+<p>
+Bear Boutigue does not grant users
+rights to copyrighted music
+or other third-party content.
+</p>
+
+
+
+<div class="sectionTitle">
+9. Apple Music
+</div>
+
+
+<p>
+Some Bear Boutigue applications,
+including Bear Power Music,
+may provide features that work with Apple Music.
+</p>
+
+
+<p>
+Apple Music availability and functionality
+depend on Apple,
+the user's Apple Music subscription,
+supported regions,
+device compatibility,
+and Apple's services.
+</p>
+
+
+<p>
+Apple Music content
+is subject to Apple's own terms,
+licensing restrictions,
+and service availability.
+</p>
+
+
+
+<div class="sectionTitle">
+10. Acceptable Use
+</div>
+
+
+<p>
+You agree not to misuse Bear Boutigue applications.
+</p>
+
+
+<p>
+You must not:
+</p>
+
+
+<ul>
+
+  <li>
+    use an application for unlawful purposes;
+  </li>
+
+  <li>
+    attempt to interfere with or disrupt
+    the operation of an application;
+  </li>
+
+  <li>
+    attempt to bypass subscription,
+    purchase,
+    or security mechanisms;
+  </li>
+
+  <li>
+    use content in violation of copyright
+    or other intellectual property rights;
+  </li>
+
+  <li>
+    reverse engineer or redistribute an application
+    except where applicable law expressly permits it.
+  </li>
+
+</ul>
+
+
+
+<div class="sectionTitle">
+11. Intellectual Property
+</div>
+
+
+<p>
+The Bear Boutigue name,
+application designs,
+original illustrations,
+animations,
+graphics,
+text,
+and other original materials
+are protected by applicable intellectual property laws.
+</p>
+
+
+<p>
+Using a Bear Boutigue application
+does not transfer ownership
+of Bear Boutigue intellectual property
+to the user.
+</p>
+
+
+
+<div class="sectionTitle">
+12. Availability and Updates
+</div>
+
+
+<p>
+Bear Boutigue may update,
+modify,
+improve,
+remove,
+or add application features
+from time to time.
+</p>
+
+
+<p>
+Certain features may depend
+on Apple services,
+iCloud,
+Apple Music,
+internet connectivity,
+device capabilities,
+or the installed operating system.
+</p>
+
+
+<p>
+We cannot guarantee
+that every feature will remain available
+on every device,
+operating system,
+country,
+or region indefinitely.
+</p>
+
+
+
+<div class="sectionTitle">
+13. Privacy
+</div>
+
+
+<p>
+Bear Boutigue respects user privacy.
+</p>
+
+
+<p>
+Our applications do not sell users'
+personal information.
+</p>
+
+
+<p>
+For more information,
+please review the Bear Boutigue Privacy Policy:
+</p>
+
+
+<p>
+
+<a
+  href="https://bearboutigue.com"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+https://bearboutigue.com
+</a>
+
+</p>
+
+
+
+<div class="sectionTitle">
+14. Disclaimer
+</div>
+
+
+<p>
+Bear Boutigue applications are provided
+on an “as available” basis.
+</p>
+
+
+<p>
+While we work to maintain stable
+and reliable applications,
+we cannot guarantee
+that applications will always operate
+without interruptions,
+errors,
+or compatibility issues.
+</p>
+
+
+
+<div class="sectionTitle">
+15. Limitation of Liability
+</div>
+
+
+<p>
+To the extent permitted by applicable law,
+Bear Boutigue is not responsible
+for indirect or consequential losses
+resulting from the use
+or inability to use an application,
+including loss of user-created content
+caused by device failure,
+third-party services,
+Apple services,
+or circumstances outside our reasonable control.
+</p>
+
+
+<p>
+Users should keep appropriate backups
+of important content
+where backup or export functionality is available.
+</p>
+
+
+
+<div class="sectionTitle">
+16. Changes to These Terms
+</div>
+
+
+<p>
+These Terms of Use may be updated
+when application functionality,
+subscriptions,
+services,
+or legal requirements change.
+</p>
+
+
+<p>
+The current version
+will be available
+on the official Bear Boutigue website.
+</p>
+
+
+
+<div class="sectionTitle">
+17. Apple Standard EULA
+</div>
+
+
+<p>
+Bear Boutigue applications distributed through the App Store
+are also subject to Apple's Standard End User License Agreement,
+unless another applicable license agreement is provided.
+</p>
+
+
+<p>
+Apple Standard End User License Agreement (EULA):
+</p>
+
+
+<p>
+
+<a
+  href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"
+  target="_blank"
+  rel="noopener noreferrer"
+>
 https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 </a>
+
 </p>
 
+
+
+<div class="sectionTitle">
+18. Contact
 </div>
+
+
+<p>
+If you have questions
+about these Terms of Use
+or a Bear Boutigue application,
+you can contact us:
+</p>
+
+
+<p>
+
+Email:
+
+<a href="mailto:bearboutigue25@gmail.com">
+bearboutigue25@gmail.com
+</a>
+
+</p>
+
+
+<p>
+
+Official Website:
+
+<a
+  href="https://bearboutigue.com"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+https://bearboutigue.com
+</a>
+
+</p>
+
+
+<p>
+
+Instagram:
+
+<a
+  href="https://www.instagram.com/bear_boutigue?cplk=MXdraDhqazJpMmducA=="
+  target="_blank"
+  rel="noopener noreferrer"
+>
+Bear Boutigue
+</a>
+
+</p>
+
+
+</div>
+
+
+<!-- =======================================================
+     DIAMOND STAR GENERATOR
+     ======================================================= -->
+
+<script>
+
+(function(){
+
+  const container =
+    document.getElementById(
+      "diamondStars"
+    );
+
+  if(!container){
+    return;
+  }
+
+  const totalStars =
+    window.innerWidth <= 600
+      ? 120
+      : 200;
+
+  for(let i = 0; i < totalStars; i++){
+
+    const star =
+      document.createElement(
+        "span"
+      );
+
+    star.className =
+      "sparkle";
+
+    const random =
+      Math.random();
+
+    if(random > 0.82){
+
+      star.classList.add(
+        "bright"
+      );
+
+    }
+
+    if(random > 0.94){
+
+      star.classList.add(
+        "star"
+      );
+
+    }
+
+    star.style.left =
+      (
+        Math.random()
+        *
+        100
+      )
+      +
+      "%";
+
+    star.style.top =
+      (
+        Math.random()
+        *
+        100
+      )
+      +
+      "%";
+
+    star.style.setProperty(
+
+      "--duration",
+
+      (
+        2.8
+        +
+        Math.random()
+        *
+        6.5
+      )
+      +
+      "s"
+
+    );
+
+    star.style.setProperty(
+
+      "--delay",
+
+      (
+        -Math.random()
+        *
+        10
+      )
+      +
+      "s"
+
+    );
+
+    star.style.setProperty(
+
+      "--scale",
+
+      (
+        0.55
+        +
+        Math.random()
+        *
+        1.8
+      )
+      .toFixed(2)
+
+    );
+
+    container.appendChild(
+      star
+    );
+
+  }
+
+})();
+
+</script>
+
+
+<!-- =======================================================
+     BEE.PNG GENERATOR
+     15 LARGE SLOW BEES
+     ======================================================= -->
+
+<script>
+
+(function(){
+
+  const layer =
+    document.getElementById(
+      "beesLayer"
+    );
+
+  if(!layer){
+    return;
+  }
+
+
+  /*
+   15 бджіл
+  */
+
+  const beeCount = 15;
+
+
+  for(let i = 0; i < beeCount; i++){
+
+    const bee =
+      document.createElement(
+        "img"
+      );
+
+    bee.src =
+      "bee.png";
+
+    bee.alt =
+      "";
+
+
+    /*
+     Різні великі розміри
+    */
+
+    const sizeRandom =
+      Math.random();
+
+
+    if(sizeRandom < 0.25){
+
+      bee.className =
+        "bee small";
+
+    }
+
+    else if(sizeRandom < 0.70){
+
+      bee.className =
+        "bee medium";
+
+    }
+
+    else{
+
+      bee.className =
+        "bee large";
+
+    }
+
+
+    layer.appendChild(
+      bee
+    );
+
+
+    /*
+     Початкова випадкова позиція
+    */
+
+    const startX =
+      Math.random()
+      *
+      Math.max(
+        1,
+        window.innerWidth - 120
+      );
+
+
+    const startY =
+      Math.random()
+      *
+      Math.max(
+        1,
+        window.innerHeight - 120
+      );
+
+
+    bee.style.transform =
+      "translate3d("
+      +
+      startX
+      +
+      "px,"
+      +
+      startY
+      +
+      "px,0)";
+
+
+    /*
+     Починають літати
+     не одночасно
+    */
+
+    setTimeout(
+
+      function(){
+
+        flyBee(
+          bee,
+          startX,
+          startY
+        );
+
+      },
+
+      Math.random()
+      *
+      5000
+
+    );
+
+  }
+
+
+  function flyBee(
+    bee,
+    currentX,
+    currentY
+  ){
+
+    /*
+     Відступ від краю,
+     щоб великі бджілки
+     не обрізалися
+    */
+
+    const padding = 110;
+
+
+    const availableWidth =
+      Math.max(
+        1,
+        window.innerWidth
+        -
+        padding
+        *
+        2
+      );
+
+
+    const availableHeight =
+      Math.max(
+        1,
+        window.innerHeight
+        -
+        padding
+        *
+        2
+      );
+
+
+    /*
+     Випадкова нова точка
+     вверх / вниз /
+     вправо / вліво /
+     по діагоналі
+    */
+
+    const nextX =
+      padding
+      +
+      Math.random()
+      *
+      availableWidth;
+
+
+    const nextY =
+      padding
+      +
+      Math.random()
+      *
+      availableHeight;
+
+
+    const goingLeft =
+      nextX
+      <
+      currentX;
+
+
+    /*
+     Невеликий нахил
+    */
+
+    const rotation =
+      (
+        Math.random()
+        *
+        20
+      )
+      -
+      10;
+
+
+    /*
+     Повільний політ:
+     приблизно 12–20 секунд
+    */
+
+    const duration =
+      12000
+      +
+      Math.random()
+      *
+      8000;
+
+
+    /*
+     Повертає бджілку
+     в напрямку польоту
+    */
+
+    const direction =
+      goingLeft
+        ? -1
+        : 1;
+
+
+    const animation =
+      bee.animate(
+
+        [
+
+          {
+
+            transform:
+
+              "translate3d("
+              +
+              currentX
+              +
+              "px,"
+              +
+              currentY
+              +
+              "px,0) "
+              +
+              "scaleX("
+              +
+              direction
+              +
+              ") "
+              +
+              "rotate("
+              +
+              (-rotation)
+              +
+              "deg)"
+
+          },
+
+
+          {
+
+            transform:
+
+              "translate3d("
+              +
+              nextX
+              +
+              "px,"
+              +
+              nextY
+              +
+              "px,0) "
+              +
+              "scaleX("
+              +
+              direction
+              +
+              ") "
+              +
+              "rotate("
+              +
+              rotation
+              +
+              "deg)"
+
+          }
+
+        ],
+
+        {
+
+          duration:
+            duration,
+
+          easing:
+            "ease-in-out",
+
+          fill:
+            "forwards"
+
+        }
+
+      );
+
+
+    animation.onfinish =
+      function(){
+
+        flyBee(
+          bee,
+          nextX,
+          nextY
+        );
+
+      };
+
+  }
+
+})();
+
+</script>
+
 
 </body>
 </html>
