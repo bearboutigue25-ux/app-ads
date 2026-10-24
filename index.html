@@ -49,11 +49,8 @@ body{
 #diamondStars{
   position:fixed;
   inset:0;
-
   z-index:1;
-
   pointer-events:none;
-
   overflow:hidden;
 }
 
@@ -165,18 +162,15 @@ body{
 
 /* =========================================================
    FLYING BEE.PNG
-   7 БІЛЬШИХ БДЖІЛ
    ========================================================= */
 
 .beesLayer{
   position:fixed;
-
   inset:0;
 
   z-index:6;
 
   pointer-events:none;
-
   overflow:hidden;
 }
 
@@ -196,29 +190,20 @@ body{
   will-change:transform;
 
   filter:
-    drop-shadow(
-      0 2px 3px
-      rgba(91,47,34,0.14)
-    )
-    drop-shadow(
-      0 0 6px
-      rgba(255,255,255,0.35)
-    );
+    drop-shadow(0 2px 3px rgba(91,47,34,0.14))
+    drop-shadow(0 0 6px rgba(255,255,255,0.35));
 }
 
-
-/* більші */
-
 .bee.small{
-  width:42px;
+  width:58px;
 }
 
 .bee.medium{
-  width:54px;
+  width:76px;
 }
 
 .bee.large{
-  width:68px;
+  width:96px;
 }
 
 
@@ -322,6 +307,18 @@ li{
   color:var(--brown);
 }
 
+.appTitle{
+  text-align:center;
+
+  font-size:25px;
+
+  font-weight:900;
+
+  margin:48px 0 20px 0;
+
+  color:var(--brown);
+}
+
 h3{
   font-size:22px;
 
@@ -354,29 +351,18 @@ b{
 
 /* =========================================================
    PAW BUTTONS
-   ЛІВА + ПРАВА СТОРОНА
+   13 кнопок
    ========================================================= */
 
 .buttons{
   position:fixed;
 
-  top:78px;
-  bottom:14px;
-
-  width:100%;
-
-  left:0;
+  inset:0;
 
   z-index:70;
 
   pointer-events:none;
 }
-
-
-/*
- Кожна кнопка абсолютно позиціонується,
- щоб їх можна було розкласти на дві сторони.
-*/
 
 .storeButton{
   position:absolute;
@@ -392,165 +378,123 @@ b{
     forwards;
 
   pointer-events:auto;
+
+  transform:translateY(-50%);
 }
 
 
-/* =========================================================
-   ПРАВА СТОРОНА
-   1, 3, 5, 7, 9, 11
-   ========================================================= */
+/* RIGHT */
 
 .storeButton:nth-child(1),
 .storeButton:nth-child(3),
 .storeButton:nth-child(5),
 .storeButton:nth-child(7),
 .storeButton:nth-child(9),
-.storeButton:nth-child(11){
-
-  right:16px;
+.storeButton:nth-child(11),
+.storeButton:nth-child(13){
+  right:24px;
 }
 
 
-/* =========================================================
-   ЛІВА СТОРОНА
-   2, 4, 6, 8, 10
-   ========================================================= */
+/* LEFT */
 
 .storeButton:nth-child(2),
 .storeButton:nth-child(4),
 .storeButton:nth-child(6),
 .storeButton:nth-child(8),
-.storeButton:nth-child(10){
-
-  left:16px;
+.storeButton:nth-child(10),
+.storeButton:nth-child(12){
+  left:24px;
 }
 
 
-/* =========================================================
-   ВЕРТИКАЛЬНЕ ШАХМАТНЕ РОЗМІЩЕННЯ
-   ========================================================= */
+/* RIGHT COLUMN */
 
 .storeButton:nth-child(1){
-  top:1%;
-}
-
-.storeButton:nth-child(2){
-  top:10%;
+  top:calc(50% - 270px);
 }
 
 .storeButton:nth-child(3){
-  top:19%;
-}
-
-.storeButton:nth-child(4){
-  top:28%;
+  top:calc(50% - 180px);
 }
 
 .storeButton:nth-child(5){
-  top:37%;
-}
-
-.storeButton:nth-child(6){
-  top:46%;
+  top:calc(50% - 90px);
 }
 
 .storeButton:nth-child(7){
-  top:55%;
-}
-
-.storeButton:nth-child(8){
-  top:64%;
+  top:50%;
 }
 
 .storeButton:nth-child(9){
-  top:73%;
-}
-
-.storeButton:nth-child(10){
-  top:82%;
+  top:calc(50% + 90px);
 }
 
 .storeButton:nth-child(11){
-  top:91%;
+  top:calc(50% + 180px);
+}
+
+.storeButton:nth-child(13){
+  top:calc(50% + 270px);
 }
 
 
-/* невеликий шахматний відступ */
+/* LEFT COLUMN */
+
+.storeButton:nth-child(2){
+  top:calc(50% - 225px);
+}
+
+.storeButton:nth-child(4){
+  top:calc(50% - 135px);
+}
+
+.storeButton:nth-child(6){
+  top:calc(50% - 45px);
+}
+
+.storeButton:nth-child(8){
+  top:calc(50% + 45px);
+}
+
+.storeButton:nth-child(10){
+  top:calc(50% + 135px);
+}
+
+.storeButton:nth-child(12){
+  top:calc(50% + 225px);
+}
+
+
+/* шахматний ефект */
 
 .storeButton:nth-child(1),
 .storeButton:nth-child(5),
-.storeButton:nth-child(9){
-  transform:translateX(-12px);
+.storeButton:nth-child(9),
+.storeButton:nth-child(13){
+  margin-right:18px;
 }
 
 .storeButton:nth-child(3),
 .storeButton:nth-child(7),
 .storeButton:nth-child(11){
-  transform:translateX(0);
+  margin-right:0;
 }
 
 .storeButton:nth-child(2),
 .storeButton:nth-child(6),
 .storeButton:nth-child(10){
-  transform:translateX(12px);
+  margin-left:18px;
 }
 
 .storeButton:nth-child(4),
-.storeButton:nth-child(8){
-  transform:translateX(0);
+.storeButton:nth-child(8),
+.storeButton:nth-child(12){
+  margin-left:0;
 }
 
 
-/* анімація появи */
-
-.storeButton:nth-child(1){
-  animation-delay:0.10s;
-}
-
-.storeButton:nth-child(2){
-  animation-delay:0.20s;
-}
-
-.storeButton:nth-child(3){
-  animation-delay:0.30s;
-}
-
-.storeButton:nth-child(4){
-  animation-delay:0.40s;
-}
-
-.storeButton:nth-child(5){
-  animation-delay:0.50s;
-}
-
-.storeButton:nth-child(6){
-  animation-delay:0.60s;
-}
-
-.storeButton:nth-child(7){
-  animation-delay:0.70s;
-}
-
-.storeButton:nth-child(8){
-  animation-delay:0.80s;
-}
-
-.storeButton:nth-child(9){
-  animation-delay:0.90s;
-}
-
-.storeButton:nth-child(10){
-  animation-delay:1.00s;
-}
-
-.storeButton:nth-child(11){
-  animation-delay:1.10s;
-}
-
-
-/* =========================================================
-   РОЗМІР ЛАПОК — ЗАЛИШАЄМО ЯК Є
-   ========================================================= */
+/* SIZE */
 
 .storeButton img{
   width:clamp(52px,7.8vh,96px);
@@ -583,6 +527,23 @@ b{
     0 0 16px rgba(255,255,255,0.9);
 }
 
+
+/* APPEAR */
+
+.storeButton:nth-child(1){ animation-delay:0.10s; }
+.storeButton:nth-child(2){ animation-delay:0.20s; }
+.storeButton:nth-child(3){ animation-delay:0.30s; }
+.storeButton:nth-child(4){ animation-delay:0.40s; }
+.storeButton:nth-child(5){ animation-delay:0.50s; }
+.storeButton:nth-child(6){ animation-delay:0.60s; }
+.storeButton:nth-child(7){ animation-delay:0.70s; }
+.storeButton:nth-child(8){ animation-delay:0.80s; }
+.storeButton:nth-child(9){ animation-delay:0.90s; }
+.storeButton:nth-child(10){ animation-delay:1.00s; }
+.storeButton:nth-child(11){ animation-delay:1.10s; }
+.storeButton:nth-child(12){ animation-delay:1.20s; }
+.storeButton:nth-child(13){ animation-delay:1.30s; }
+
 @keyframes pawAppear{
 
   0%{
@@ -604,7 +565,7 @@ b{
 
 
 /* =========================================================
-   MACBOOK / DESKTOP
+   MACBOOK / LAPTOP
    ========================================================= */
 
 @media (min-width:901px){
@@ -614,24 +575,23 @@ b{
   .storeButton:nth-child(5),
   .storeButton:nth-child(7),
   .storeButton:nth-child(9),
-  .storeButton:nth-child(11){
-    right:22px;
+  .storeButton:nth-child(11),
+  .storeButton:nth-child(13){
+    right:28px;
   }
-
 
   .storeButton:nth-child(2),
   .storeButton:nth-child(4),
   .storeButton:nth-child(6),
   .storeButton:nth-child(8),
-  .storeButton:nth-child(10){
-    left:22px;
+  .storeButton:nth-child(10),
+  .storeButton:nth-child(12){
+    left:28px;
   }
-
 
   .storeButton img{
     width:clamp(60px,8vh,104px);
   }
-
 
   .storeText{
     font-size:clamp(7px,0.95vh,11px);
@@ -639,17 +599,78 @@ b{
     margin-top:-6px;
   }
 
-
   .bee.small{
-    width:48px;
+    width:64px;
   }
 
   .bee.medium{
-    width:62px;
+    width:84px;
   }
 
   .bee.large{
-    width:78px;
+    width:108px;
+  }
+
+}
+
+
+/* =========================================================
+   LOWER LAPTOP HEIGHT
+   ========================================================= */
+
+@media (max-height:850px){
+
+  .storeButton:nth-child(1){
+    top:calc(50% - 228px);
+  }
+
+  .storeButton:nth-child(3){
+    top:calc(50% - 152px);
+  }
+
+  .storeButton:nth-child(5){
+    top:calc(50% - 76px);
+  }
+
+  .storeButton:nth-child(7){
+    top:50%;
+  }
+
+  .storeButton:nth-child(9){
+    top:calc(50% + 76px);
+  }
+
+  .storeButton:nth-child(11){
+    top:calc(50% + 152px);
+  }
+
+  .storeButton:nth-child(13){
+    top:calc(50% + 228px);
+  }
+
+
+  .storeButton:nth-child(2){
+    top:calc(50% - 190px);
+  }
+
+  .storeButton:nth-child(4){
+    top:calc(50% - 114px);
+  }
+
+  .storeButton:nth-child(6){
+    top:calc(50% - 38px);
+  }
+
+  .storeButton:nth-child(8){
+    top:calc(50% + 38px);
+  }
+
+  .storeButton:nth-child(10){
+    top:calc(50% + 114px);
+  }
+
+  .storeButton:nth-child(12){
+    top:calc(50% + 190px);
   }
 
 }
@@ -667,23 +688,25 @@ b{
     font-size:18px;
   }
 
-
   .centerTitle{
     font-size:28px;
 
     margin:60px 0 28px 0;
   }
 
+  .appTitle{
+    font-size:23px;
+
+    margin:42px 0 18px 0;
+  }
 
   h3{
     font-size:24px;
   }
 
-
   .menu{
     padding:12px 6px;
   }
-
 
   .menu a{
     margin:0 7px;
@@ -691,16 +714,8 @@ b{
     font-size:14px;
   }
 
-
   .header{
     margin-top:56px;
-  }
-
-
-  .buttons{
-    top:68px;
-
-    bottom:8px;
   }
 
 
@@ -709,8 +724,9 @@ b{
   .storeButton:nth-child(5),
   .storeButton:nth-child(7),
   .storeButton:nth-child(9),
-  .storeButton:nth-child(11){
-    right:4px;
+  .storeButton:nth-child(11),
+  .storeButton:nth-child(13){
+    right:6px;
   }
 
 
@@ -718,8 +734,9 @@ b{
   .storeButton:nth-child(4),
   .storeButton:nth-child(6),
   .storeButton:nth-child(8),
-  .storeButton:nth-child(10){
-    left:4px;
+  .storeButton:nth-child(10),
+  .storeButton:nth-child(12){
+    left:6px;
   }
 
 
@@ -727,65 +744,94 @@ b{
     width:clamp(42px,6.3vh,72px);
   }
 
-
   .storeText{
     font-size:clamp(6px,0.95vh,9px);
 
     margin-top:-4px;
-
-    line-height:0.95;
-  }
-
-
-  .storeButton:nth-child(1),
-  .storeButton:nth-child(5),
-  .storeButton:nth-child(9){
-    transform:translateX(-6px);
-  }
-
-
-  .storeButton:nth-child(2),
-  .storeButton:nth-child(6),
-  .storeButton:nth-child(10){
-    transform:translateX(6px);
   }
 
 
   .bee.small{
-    width:38px;
-  }
-
-  .bee.medium{
     width:48px;
   }
 
+  .bee.medium{
+    width:64px;
+  }
+
   .bee.large{
-    width:60px;
+    width:82px;
   }
 
 }
 
 
 /* =========================================================
-   НИЗЬКІ ЕКРАНИ
+   VERY LOW SCREENS
    ========================================================= */
 
-@media (max-height:720px){
-
-  .buttons{
-    top:62px;
-
-    bottom:5px;
-  }
-
+@media (max-height:700px){
 
   .storeButton img{
-    width:clamp(36px,5.5vh,56px);
+    width:clamp(40px,6vh,58px);
   }
 
 
+  .storeButton:nth-child(1){
+    top:calc(50% - 180px);
+  }
+
+  .storeButton:nth-child(3){
+    top:calc(50% - 120px);
+  }
+
+  .storeButton:nth-child(5){
+    top:calc(50% - 60px);
+  }
+
+  .storeButton:nth-child(7){
+    top:50%;
+  }
+
+  .storeButton:nth-child(9){
+    top:calc(50% + 60px);
+  }
+
+  .storeButton:nth-child(11){
+    top:calc(50% + 120px);
+  }
+
+  .storeButton:nth-child(13){
+    top:calc(50% + 180px);
+  }
+
+
+  .storeButton:nth-child(2){
+    top:calc(50% - 150px);
+  }
+
+  .storeButton:nth-child(4){
+    top:calc(50% - 90px);
+  }
+
+  .storeButton:nth-child(6){
+    top:calc(50% - 30px);
+  }
+
+  .storeButton:nth-child(8){
+    top:calc(50% + 30px);
+  }
+
+  .storeButton:nth-child(10){
+    top:calc(50% + 90px);
+  }
+
+  .storeButton:nth-child(12){
+    top:calc(50% + 150px);
+  }
+
   .storeText{
-    font-size:clamp(5.5px,0.85vh,8px);
+    font-size:7px;
 
     margin-top:-3px;
   }
@@ -801,7 +847,6 @@ b{
 
   .sparkle{
     animation:none;
-
     opacity:0.35;
   }
 
@@ -811,7 +856,6 @@ b{
 
   .storeButton{
     animation:none;
-
     opacity:1;
   }
 
@@ -825,16 +869,12 @@ b{
 <body>
 
 
-<!-- =======================================================
-     DIAMOND STARS
-     ======================================================= -->
+<!-- STARS -->
 
 <div id="diamondStars"></div>
 
 
-<!-- =======================================================
-     FLYING BEE.PNG
-     ======================================================= -->
+<!-- BEES -->
 
 <div
   class="beesLayer"
@@ -843,13 +883,11 @@ b{
 ></div>
 
 
-<!-- =======================================================
-     MENU
-     ======================================================= -->
+<!-- TOP MENU -->
 
 <div class="menu">
 
-  <a href="https://bearboutigue.com">
+  <a href="#privacy">
     Privacy Policy
   </a>
 
@@ -864,14 +902,12 @@ b{
 </div>
 
 
-<!-- =======================================================
-     HEADER
-     ======================================================= -->
+<!-- HEADER -->
 
 <img
   src="ddbb.png"
   class="header"
-  alt="Bear Boutigue header"
+  alt="Bear Boutigue"
 >
 
 
@@ -882,459 +918,480 @@ b{
 <div class="content">
 
 
+  <!-- =====================================================
+       ABOUT OUR APPS
+       ===================================================== -->
+
   <div class="centerTitle">
     About Our Apps
   </div>
 
 
   <p>
-    All applications listed on this page belong to the same brand —
-    <b>Bear Boutigue</b>.
+    Bear Boutigue creates cozy, creative, and easy-to-use apps
+    for everyday life, creativity, music, memories, planning,
+    and children.
   </p>
 
 
   <p>
-    This Privacy Policy applies to all Bear Boutigue apps,
-    including but not limited to:
+    Our apps are designed with a recognizable Bear Boutigue style —
+    soft colors, bears, illustrations, animations,
+    and a warm atmosphere.
   </p>
 
 
-  <ul>
 
-    <li>My Cutie Diary</li>
+  <!-- MY CUTIE DIARY -->
 
-    <li>Bear's Notes</li>
-
-    <li>Baby Bear Art</li>
-
-    <li>Bear Alarm &amp; Calendar</li>
-
-    <li>Music Bears</li>
-
-    <li>Bear Power Music</li>
-
-    <li>Magic Bear Tales</li>
-
-  </ul>
+  <div class="appTitle">
+    My Cutie Diary
+  </div>
 
 
   <p>
-    These apps share the same design philosophy,
-    privacy principles,
-    and data protection standards.
+    My Cutie Diary is a personal diary created for preserving memories,
+    thoughts, moods, family stories, and the little moments of everyday life.
   </p>
 
 
   <p>
-    For clarity and transparency,
-    all privacy-related information for our apps
-    is collected and presented on this single page.
+    Users can create memories with text, photos, videos, audio,
+    and voice recordings, organize them by date,
+    search through previously saved memories,
+    and return to important moments from months or years ago.
   </p>
 
 
   <p>
-    By using any Bear Boutigue app,
-    you agree to the practices described
-    in this Privacy Policy.
+    The app includes a Memory Calendar, Memory Search,
+    Mood of the Day, monthly Mood Statistics,
+    relaxing built-in audio and video,
+    background audio playback,
+    a full-featured audio player,
+    daily kind reminders,
+    and convenient sharing of memories and attachments.
+  </p>
+
+
+  <p>
+    Memories can also be added to dates from the distant past,
+    making the app suitable for preserving family history,
+    stories about grandparents, ancestors,
+    and other meaningful memories.
+  </p>
+
+
+  <p>
+    My Cutie Diary is designed to grow together with the user
+    and become a personal collection of memories for many years.
   </p>
 
 
 
-  <!-- =====================================================
-       BABY BEAR ART
-       ===================================================== -->
+  <!-- BEAR'S NOTES -->
 
-  <div class="centerTitle">
+  <div class="appTitle">
+    Bear's Notes
+  </div>
+
+
+  <p>
+    Bear's Notes is a creative note-taking app for writing,
+    ideas, books, plans, personal notes, and special moments.
+  </p>
+
+
+  <p>
+    Users can create and edit text,
+    choose between Marker Felt and Times New Roman fonts,
+    change text alignment,
+    undo and redo changes,
+    and add photos, videos, audio, files,
+    voice recordings, and scanned documents.
+  </p>
+
+
+  <p>
+    Saved notes are organized in a calendar,
+    making it easy to return to a specific date.
+    Notes can also be found using search.
+  </p>
+
+
+  <p>
+    The app includes audio playback with its own player,
+    background playback,
+    sharing of complete notes as ZIP files or individual attachments,
+    handwritten signatures and illustrations saved in PNG format,
+    and iCloud synchronization between supported devices.
+  </p>
+
+
+  <p>
+    Bear's Notes is available across iPhone, iPad, and Mac,
+    allowing notes and creative ideas to stay accessible
+    on different Apple devices.
+  </p>
+
+
+
+  <!-- BABY BEAR ART -->
+
+  <div class="appTitle">
     Baby Bear Art
   </div>
 
 
-  <h3>
-    Privacy Policy
-  </h3>
-
-
   <p>
-    <b>Last updated:</b> 18.01.2026
+    Baby Bear Art is a simple and playful drawing app
+    created especially for young children.
   </p>
 
 
   <p>
-    This Privacy Policy describes how Baby Bear Art
-    (“the App”, “we”, “us”, or “our”)
-    collects, uses, and protects your information
-    when you use our application.
+    Children can choose colors,
+    adjust line thickness,
+    use an eraser,
+    undo or redo actions,
+    clear the canvas,
+    and create their own drawings
+    in an easy-to-understand environment.
   </p>
 
 
   <p>
-    We are committed to protecting your privacy.
+    The app includes two cute animated screens
+    that create a fun and magical atmosphere.
   </p>
 
 
   <p>
-    By using the App,
-    you agree to the practices described
-    in this Privacy Policy.
-  </p>
-
-
-  <div class="separator">⸻</div>
-
-
-  <h3>
-    1. Information We Do NOT Collect
-  </h3>
-
-
-  <p>
-    Your privacy is important to us.
+    Finished drawings can be saved as PNG images
+    with a transparent background.
   </p>
 
 
   <p>
-    The App does NOT collect,
-    store, or transmit any of the following data:
-  </p>
-
-
-  <ul>
-
-    <li>
-      Personal information
-      (name, email address, postal address, phone number)
-    </li>
-
-    <li>Financial information</li>
-
-    <li>Location data</li>
-
-    <li>Contact information</li>
-
-    <li>Browsing history</li>
-
-    <li>Advertising identifiers</li>
-
-    <li>Analytics data</li>
-
-    <li>
-      Any data stored on your device outside of the App
-    </li>
-
-  </ul>
-
-
-  <p>
-    We do not create user accounts
-    and do not require registration.
-  </p>
-
-
-  <div class="separator">⸻</div>
-
-
-  <h3>
-    2. Drawings and Media Files
-  </h3>
-
-
-  <p>
-    The App allows users to create drawings and:
-  </p>
-
-
-  <ul>
-
-    <li>
-      save them to the device’s photo library
-      (with user permission)
-    </li>
-
-    <li>
-      save them to an internal gallery within the App
-    </li>
-
-    <li>
-      view a built-in gallery of bear illustrations
-    </li>
-
-  </ul>
-
-
-  <p>
-    All drawings remain only on the user’s device.
+    These drawings can become special family memories
+    and can also be used for personal creative ideas,
+    such as printed keepsakes,
+    postcards,
+    family souvenirs,
+    or prints on clothing.
   </p>
 
 
   <p>
-    We do not send, upload,
-    or store drawings on any external servers.
-  </p>
-
-
-  <div class="separator">⸻</div>
-
-
-  <h3>
-    3. Access to Device Permissions
-  </h3>
-
-
-  <p>
-    The App may request access
-    to the following permissions:
-  </p>
-
-
-  <ul>
-
-    <li>
-
-      <b>Photos</b><br>
-
-      Used only to save drawings created in the App.<br>
-
-      We do not access your existing photos —
-      only the image you choose to save.
-
-    </li>
-
-
-    <li>
-
-      <b>Camera</b><br>
-
-      Used only when you manually choose
-      to take a photo for use within the App.<br>
-
-      No camera data is collected or stored by us.
-
-    </li>
-
-
-    <li>
-
-      <b>Microphone (optional)</b><br>
-
-      If the App supports voice features,
-      microphone access is used only locally
-      and is not stored or transmitted.<br>
-
-      The App will never access these permissions
-      without your explicit consent.
-
-    </li>
-
-  </ul>
-
-
-  <div class="separator">⸻</div>
-
-
-  <h3>
-    4. Children’s Privacy
-  </h3>
-
-
-  <p>
-    The App is suitable for children
-    and does not collect personal data.
+    Baby Bear Art is designed for use at home,
+    while traveling,
+    or whenever a child wants to draw and create.
   </p>
 
 
   <p>
-    We comply with the Children’s Online Privacy Protection Act (COPPA).
+    Baby Bear Art is free to use
+    and does not require a subscription.
+    It does not contain advertising.
   </p>
 
 
-  <div class="separator">⸻</div>
 
+  <!-- BEAR ALARM -->
 
-  <h3>
-    5. Third-Party Services
-  </h3>
-
-
-  <p>
-    The App does not use:
-  </p>
-
-
-  <ul>
-
-    <li>analytics tools</li>
-
-    <li>tracking services</li>
-
-    <li>advertising networks</li>
-
-    <li>external data storage</li>
-
-  </ul>
+  <div class="appTitle">
+    Bear Alarm &amp; Calendar
+  </div>
 
 
   <p>
-    No user data is shared with third parties.
-  </p>
-
-
-  <div class="separator">⸻</div>
-
-
-  <h3>
-    6. Data Security
-  </h3>
-
-
-  <p>
-    Since the App does not collect
-    or store personal information,
-    no data is transmitted to external servers.
+    Bear Alarm &amp; Calendar is a cozy everyday planning app
+    that combines alarms,
+    calendar tools,
+    reminders,
+    lists,
+    and personal planning features
+    in one Bear Boutigue environment.
   </p>
 
 
   <p>
-    All your content remains securely on your device.
-  </p>
-
-
-  <div class="separator">⸻</div>
-
-
-  <h3>
-    7. Changes to This Policy
-  </h3>
-
-
-  <p>
-    We may update this Privacy Policy
-    to reflect changes in the App.
+    Users can create alarms with labels,
+    repeat days,
+    and selected sounds,
+    organize events in the calendar,
+    and receive reminders before planned events.
   </p>
 
 
   <p>
-    Updates will be posted here
-    with a new “Last updated” date.
-  </p>
-
-
-  <div class="separator">⸻</div>
-
-
-  <h3>
-    8. Contact Us
-  </h3>
-
-
-  <p>
-    If you have any questions
-    about this Privacy Policy,
-    you may contact us:
+    The app also includes planning and tracking tools,
+    saved lists,
+    a travel checklist,
+    weight tracking,
+    notes,
+    and day-by-day task marking.
   </p>
 
 
   <p>
-    Email:
-
-    <a href="mailto:bearboutigue25@gmail.com">
-      bearboutigue25@gmail.com
-    </a>
+    The calendar supports day, week, month, and year views.
   </p>
 
 
   <p>
-    Instagram:
-
-    <a
-      href="https://www.instagram.com/bear_boutigue?cplk=MXdraDhqazJpMmducA=="
-      target="_blank"
-    >
-      https://www.instagram.com/bear_boutigue
-    </a>
+    Bear Alarm &amp; Calendar automatically follows
+    the device’s regional time format
+    and supports both 12-hour and 24-hour time systems.
   </p>
 
 
   <p>
-    Designer:
+    It is designed as a warm and convenient space
+    for organizing everyday plans
+    at home,
+    at work,
+    or while traveling.
+  </p>
 
-    <a
-      href="https://www.instagram.com/author_olha_smulska?vrfl=MWprM2xoMnFheGRtag=="
-      target="_blank"
-    >
-      https://www.instagram.com/author_olha_smulska
-    </a>
+
+
+  <!-- MUSIC BEARS -->
+
+  <div class="appTitle">
+    Music Bears
+  </div>
+
+
+  <p>
+    Music Bears is a cozy music player
+    created around animated bears
+    and a soft, magical atmosphere.
+  </p>
+
+
+  <p>
+    Users can import their own music files,
+    organize tracks into folders,
+    and enjoy music together with animated bear visuals.
+  </p>
+
+
+  <p>
+    The app is designed for relaxing listening,
+    personal music collections,
+    and creating a warm visual experience
+    around favorite tracks.
+  </p>
+
+
+  <p>
+    Music playback can continue in the background,
+    allowing users to continue listening
+    while using other parts of the device.
+  </p>
+
+
+  <p>
+    Music Bears combines music,
+    animations,
+    and the recognizable Bear Boutigue visual style
+    in one simple player.
+  </p>
+
+
+
+  <!-- BEAR POWER MUSIC -->
+
+  <div class="appTitle">
+    Bear Power Music
+  </div>
+
+
+  <p>
+    Bear Power Music is a powerful music player
+    with expressive bear visuals
+    and dynamic animations.
+  </p>
+
+
+  <p>
+    Users can import downloaded music
+    and their own original audio files,
+    organize tracks into folders,
+    and play music directly inside the app.
+  </p>
+
+
+  <p>
+    The app is suitable for everyday listeners
+    as well as DJs,
+    producers,
+    musicians,
+    and artists
+    who want to enjoy their own tracks
+    in a unique animated environment.
+  </p>
+
+
+  <p>
+    Bear Power Music also supports Apple Music
+    for eligible users with an active Apple Music subscription.
+    Users can search for songs,
+    artists,
+    and albums,
+    create Apple Music folders,
+    organize tracks,
+    and listen to supported radio content
+    directly inside the app.
+  </p>
+
+
+  <p>
+    Music can continue playing when the device is locked
+    or while other apps are being used.
+  </p>
+
+
+  <p>
+    Folders and individual audio files
+    can also be shared through available system sharing options,
+    such as AirDrop,
+    Telegram,
+    and other supported services.
+  </p>
+
+
+  <p>
+    Bear Power Music is available on iPhone, iPad, and Mac.
+  </p>
+
+
+
+  <!-- MAGIC BEAR TALES -->
+
+  <div class="appTitle">
+    Magic Bear Tales
+  </div>
+
+
+  <p>
+    Magic Bear Tales is a magical digital book
+    containing a collection of 20 fairy tales for children.
+  </p>
+
+
+  <p>
+    The stories are created around teddy bears
+    and are accompanied by colorful illustrations
+    and gentle animations
+    that help bring each fairy tale to life.
+  </p>
+
+
+  <p>
+    Children can turn pages like in a real book,
+    explore illustrations,
+    watch animations,
+    and enjoy stories together with their parents.
+  </p>
+
+
+  <p>
+    Magic Bear Tales is designed for reading at home,
+    before bedtime,
+    or while traveling.
+  </p>
+
+
+  <p>
+    The app supports multiple languages
+    and provides a warm,
+    colorful,
+    and child-friendly reading experience
+    in the Bear Boutigue style.
+  </p>
+
+
+
+  <!-- SOON -->
+
+  <div class="appTitle">
+    More Apps Coming Soon
+  </div>
+
+
+  <p>
+    Bear Boutigue continues to create new apps
+    and magical digital experiences.
+  </p>
+
+
+  <p>
+    More applications are coming soon.
   </p>
 
 
 
   <!-- =====================================================
-       MUSIC BEARS
+       GENERAL PRIVACY
        ===================================================== -->
 
-  <div class="centerTitle">
-    Music Bears
+  <div
+    class="centerTitle"
+    id="privacy"
+  >
+    Privacy Policy
   </div>
 
 
+  <p>
+    <b>Last updated:</b> October 24, 2026
+  </p>
+
+
+  <p>
+    All Bear Boutigue apps are designed
+    with respect for user privacy.
+  </p>
+
+
+  <p>
+    Bear Boutigue does not collect,
+    sell,
+    or use users’ personal information
+    for advertising or tracking.
+  </p>
+
+
+  <p>
+    Our apps do not create advertising profiles
+    and do not sell user information to third parties.
+  </p>
+
+
   <h3>
-    Privacy Policy
+    Information We Collect
   </h3>
 
 
   <p>
-    <b>Last updated:</b> 24.11.2025
-  </p>
-
-
-  <p>
-    This Privacy Policy describes how Music Bears
-    (“the App”, “we”, “us”, or “our”)
-    handles user information.
-  </p>
-
-
-  <p>
-    We respect your privacy
-    and are committed to protecting it.
-  </p>
-
-
-  <p>
-    By using the Music Bears app,
-    you agree to the practices described
-    in this Privacy Policy.
-  </p>
-
-
-  <div class="separator">⸻</div>
-
-
-  <h3>
-    1. Information We Do NOT Collect
-  </h3>
-
-
-  <p>
-    Your privacy is important to us.
-  </p>
-
-
-  <p>
-    The Music Bears app does NOT collect,
-    store, or transmit any of the following data:
+    Bear Boutigue apps do not collect personal information
+    such as:
   </p>
 
 
   <ul>
 
-    <li>
-      Personal information
-      (name, email address, phone number, postal address)
-    </li>
+    <li>Name</li>
 
-    <li>Financial information</li>
+    <li>Email address</li>
 
-    <li>Location data</li>
+    <li>Phone number</li>
+
+    <li>Postal address</li>
+
+    <li>Precise location</li>
 
     <li>Contact lists</li>
 
@@ -1342,496 +1399,186 @@ b{
 
     <li>Advertising identifiers</li>
 
-    <li>Analytics data</li>
-
-    <li>
-      Any data stored on your device outside of the App
-    </li>
+    <li>Personal information for advertising or tracking purposes</li>
 
   </ul>
 
 
-  <p>
-    We do not create user accounts
-    and do not require registration.
-  </p>
-
-
-  <div class="separator">⸻</div>
-
-
   <h3>
-    2. Music and Content
+    User Content and iCloud
   </h3>
 
 
   <p>
-    The Music Bears app allows users
-    to listen to music and manage audio content.
+    Content created inside supported Bear Boutigue apps
+    may be stored locally on the user’s device
+    or synchronized through Apple iCloud
+    when cloud synchronization is available.
   </p>
 
 
   <p>
-    All music files, settings,
-    and user content are stored locally
-    on the user’s device.
+    This may include content such as notes,
+    memories,
+    attachments,
+    calendar information,
+    or other information created by the user
+    inside the app.
   </p>
 
 
   <p>
-    We do not upload, transmit,
-    or store any content on external servers.
+    Bear Boutigue does not maintain its own database
+    containing users’ personal content.
   </p>
 
 
-  <div class="separator">⸻</div>
+  <p>
+    When Apple iCloud is used,
+    synchronization and cloud storage
+    are provided through Apple services
+    and are subject to Apple’s privacy
+    and security protections.
+  </p>
 
 
   <h3>
-    3. Device Permissions
+    Advertising
   </h3>
 
 
   <p>
-    The App never accesses device permissions
-    without your explicit consent.
+    Bear Boutigue paid apps do not contain
+    third-party advertising.
   </p>
 
 
-  <div class="separator">⸻</div>
+  <p>
+    Access to premium apps or premium features
+    may be provided through subscriptions
+    processed and managed by Apple
+    through the user’s App Store account.
+  </p>
 
 
   <h3>
-    4. Children’s Privacy
+    Baby Bear Art
   </h3>
 
 
   <p>
-    The Music Bears app is suitable for children
-    and does not collect personal data.
+    Baby Bear Art is free to use.
   </p>
 
 
   <p>
-    We comply with the Children’s Online Privacy Protection Act (COPPA).
+    Baby Bear Art does not contain advertising
+    and does not require a subscription.
   </p>
 
 
-  <div class="separator">⸻</div>
+  <p>
+    Bear Boutigue does not collect personal information
+    through Baby Bear Art.
+  </p>
 
 
   <h3>
-    5. Third-Party Services
+    Device Permissions
   </h3>
 
 
   <p>
-    The App does not use:
+    Bear Boutigue apps use only the device features
+    required for their available functionality.
   </p>
-
-
-  <ul>
-
-    <li>analytics tools</li>
-
-    <li>tracking services</li>
-
-    <li>advertising networks</li>
-
-    <li>external data storage services</li>
-
-  </ul>
 
 
   <p>
-    No user data is shared with third parties.
+    An app does not access a protected device feature
+    unless that feature is required by the app
+    and the operating system provides the appropriate permission.
   </p>
 
 
-  <div class="separator">⸻</div>
+  <p>
+    Features and available permissions may differ
+    between iPhone, iPad, and Mac versions.
+  </p>
 
 
   <h3>
-    6. Data Security
+    Third Parties
   </h3>
 
 
   <p>
-    Because the App does not collect
-    or store personal information,
-    no data is transmitted to external servers.
+    Bear Boutigue does not sell users’ personal information
+    to third parties.
   </p>
 
 
   <p>
-    All content remains securely on the user’s device.
+    Apple services may be used for features
+    such as iCloud synchronization,
+    App Store subscriptions,
+    Apple Music,
+    and other Apple-provided functionality
+    available inside individual apps.
   </p>
 
 
-  <div class="separator">⸻</div>
-
-
   <h3>
-    7. Changes to This Policy
+    Data Security
   </h3>
 
 
   <p>
-    We may update this Privacy Policy
-    to reflect changes in the App.
+    Because Bear Boutigue does not maintain
+    its own database of users’ personal app content,
+    content remains on supported user devices
+    or within Apple services
+    when Apple cloud functionality is used.
   </p>
-
-
-  <p>
-    Any updates will be posted on this page
-    with a revised “Last updated” date.
-  </p>
-
-
-  <div class="separator">⸻</div>
 
 
   <h3>
-    8. Contact Us
+    Changes to This Privacy Policy
   </h3>
 
 
   <p>
-    If you have any questions
-    about this Privacy Policy,
-    please contact us:
+    This Privacy Policy may be updated
+    when app functionality changes
+    or when new Bear Boutigue apps are released.
   </p>
 
 
   <p>
-    Email:
-
-    <a href="mailto:bearboutigue25@gmail.com">
-      bearboutigue25@gmail.com
-    </a>
-  </p>
-
-
-  <p>
-    Instagram:
-
-    <a
-      href="https://www.instagram.com/bear_boutigue?cplk=MXdraDhqazJpMmducA=="
-      target="_blank"
-    >
-      https://www.instagram.com/bear_boutigue
-    </a>
-  </p>
-
-
-  <p>
-    Designer:
-
-    <a
-      href="https://www.instagram.com/author_olha_smulska?vrfl=MWprM2xoMnFheGRtag=="
-      target="_blank"
-    >
-      https://www.instagram.com/author_olha_smulska
-    </a>
+    The current version of this Privacy Policy
+    will remain available on the official Bear Boutigue website.
   </p>
 
 
 
   <!-- =====================================================
-       BEAR'S NOTES
+       SUPPORT
        ===================================================== -->
 
   <div class="centerTitle">
-    Bear's Notes
+    Support
   </div>
 
 
-  <h3>
-    Privacy Policy
-  </h3>
-
-
   <p>
-    <b>Last updated:</b> 24.11.2025
+    For questions about Bear Boutigue apps,
+    privacy,
+    or support:
   </p>
 
 
   <p>
-    This Privacy Policy describes how Bear's Notes
-    (“the App”, “we”, “us”, or “our”)
-    handles user information.
-  </p>
-
-
-  <p>
-    We respect your privacy
-    and are committed to protecting it.
-  </p>
-
-
-  <p>
-    By using the Bear's Notes app,
-    you agree to the practices described
-    in this Privacy Policy.
-  </p>
-
-
-  <div class="separator">⸻</div>
-
-
-  <h3>
-    1. Information We Do NOT Collect
-  </h3>
-
-
-  <p>
-    Your privacy is important to us.
-  </p>
-
-
-  <p>
-    The Bear's Notes app does NOT collect,
-    store, or transmit the following data:
-  </p>
-
-
-  <ul>
-
-    <li>
-      Personal information
-      (name, email address, phone number, postal address)
-    </li>
-
-    <li>Financial information</li>
-
-    <li>Advertising identifiers</li>
-
-    <li>Browsing history</li>
-
-    <li>Tracking or analytics data</li>
-
-  </ul>
-
-
-  <p>
-    We do not require account registration.
-  </p>
-
-
-  <div class="separator">⸻</div>
-
-
-  <h3>
-    2. Notes, Drawings, and User Content
-  </h3>
-
-
-  <p>
-    The App allows users to:
-  </p>
-
-
-  <ul>
-
-    <li>create and edit notes</li>
-
-    <li>draw and create illustrations</li>
-
-    <li>
-      save drawings only to the device’s photo gallery
-    </li>
-
-    <li>
-      view a built-in gallery of bear illustrations
-    </li>
-
-    <li>
-      store notes using cloud synchronization (iCloud)
-    </li>
-
-  </ul>
-
-
-  <p>
-    All notes, drawings, and content belong to the user.
-  </p>
-
-
-  <p>
-    We do not upload or store user content
-    on external servers outside of Apple’s iCloud services.
-  </p>
-
-
-  <div class="separator">⸻</div>
-
-
-  <h3>
-    3. Device Permissions
-  </h3>
-
-
-  <p>
-    The App may request access
-    to the following device permissions
-    only with the user’s explicit consent:
-  </p>
-
-
-  <ul>
-
-    <li>
-      Microphone — for voice notes or audio features
-    </li>
-
-    <li>
-      Camera — when the user chooses to take photos for notes
-    </li>
-
-    <li>
-      Photo Gallery — to save drawings created in the App
-    </li>
-
-  </ul>
-
-
-  <p>
-    The App never accesses device permissions
-    without your explicit consent.
-  </p>
-
-
-  <div class="separator">⸻</div>
-
-
-  <h3>
-    4. Cloud Storage (iCloud)
-  </h3>
-
-
-  <p>
-    The App may use Apple iCloud
-    to synchronize notes across the user’s devices.
-  </p>
-
-
-  <p>
-    All cloud data is handled exclusively by Apple
-    under its privacy and security standards.
-  </p>
-
-
-  <p>
-    We do not have access to users’ iCloud data.
-  </p>
-
-
-  <div class="separator">⸻</div>
-
-
-  <h3>
-    5. Children’s Privacy
-  </h3>
-
-
-  <p>
-    The Bear's Notes app is suitable for children
-    and does not knowingly collect personal data.
-  </p>
-
-
-  <p>
-    We comply with the Children’s Online Privacy Protection Act (COPPA).
-  </p>
-
-
-  <div class="separator">⸻</div>
-
-
-  <h3>
-    6. Third-Party Services
-  </h3>
-
-
-  <p>
-    The App does not use:
-  </p>
-
-
-  <ul>
-
-    <li>advertising networks</li>
-
-    <li>third-party analytics</li>
-
-    <li>tracking services</li>
-
-  </ul>
-
-
-  <p>
-    The App relies only on Apple system services
-    (such as iCloud).
-  </p>
-
-
-  <div class="separator">⸻</div>
-
-
-  <h3>
-    7. Data Security
-  </h3>
-
-
-  <p>
-    User content is stored locally
-    on the device or securely via Apple iCloud.
-  </p>
-
-
-  <p>
-    No personal data is transmitted
-    to external servers controlled by us.
-  </p>
-
-
-  <div class="separator">⸻</div>
-
-
-  <h3>
-    8. Changes to This Policy
-  </h3>
-
-
-  <p>
-    We may update this Privacy Policy
-    from time to time.
-  </p>
-
-
-  <p>
-    Any changes will be posted on this page
-    with an updated “Last updated” date.
-  </p>
-
-
-  <div class="separator">⸻</div>
-
-
-  <h3>
-    9. Contact Us
-  </h3>
-
-
-  <p>
-    If you have questions
-    about this Privacy Policy,
-    please contact us:
-  </p>
-
-
-  <p>
-    Email:
+    <b>Email:</b><br>
 
     <a href="mailto:bearboutigue25@gmail.com">
       bearboutigue25@gmail.com
@@ -1840,7 +1587,19 @@ b{
 
 
   <p>
-    Instagram:
+    <b>Official Website:</b><br>
+
+    <a
+      href="https://bearboutigue.com"
+      target="_blank"
+    >
+      https://bearboutigue.com
+    </a>
+  </p>
+
+
+  <p>
+    <b>Instagram:</b><br>
 
     <a
       href="https://www.instagram.com/bear_boutigue?cplk=MXdraDhqazJpMmducA=="
@@ -1852,7 +1611,7 @@ b{
 
 
   <p>
-    Designer:
+    <b>Designer:</b><br>
 
     <a
       href="https://www.instagram.com/author_olha_smulska?vrfl=MWprM2xoMnFheGRtag=="
@@ -1867,14 +1626,13 @@ b{
 
 
 <!-- =======================================================
-     PAW BUTTONS
-     ЧЕРГУЮТЬСЯ ЛІВОРУЧ / ПРАВОРУЧ
+     13 PAW BUTTONS
      ======================================================= -->
 
 <div class="buttons">
 
 
-  <!-- 1 RIGHT -->
+  <!-- 1 -->
 
   <div class="storeButton">
 
@@ -1898,7 +1656,7 @@ b{
   </div>
 
 
-  <!-- 2 LEFT -->
+  <!-- 2 -->
 
   <div class="storeButton">
 
@@ -1921,7 +1679,7 @@ b{
   </div>
 
 
-  <!-- 3 RIGHT -->
+  <!-- 3 -->
 
   <div class="storeButton">
 
@@ -1944,7 +1702,7 @@ b{
   </div>
 
 
-  <!-- 4 LEFT -->
+  <!-- 4 -->
 
   <div class="storeButton">
 
@@ -1968,7 +1726,7 @@ b{
   </div>
 
 
-  <!-- 5 RIGHT -->
+  <!-- 5 -->
 
   <div class="storeButton">
 
@@ -1992,7 +1750,7 @@ b{
   </div>
 
 
-  <!-- 6 LEFT -->
+  <!-- 6 -->
 
   <div class="storeButton">
 
@@ -2016,7 +1774,7 @@ b{
   </div>
 
 
-  <!-- 7 RIGHT -->
+  <!-- 7 -->
 
   <div class="storeButton">
 
@@ -2040,7 +1798,7 @@ b{
   </div>
 
 
-  <!-- 8 LEFT -->
+  <!-- 8 -->
 
   <div class="storeButton">
 
@@ -2064,7 +1822,7 @@ b{
   </div>
 
 
-  <!-- 9 RIGHT -->
+  <!-- 9 -->
 
   <div class="storeButton">
 
@@ -2088,7 +1846,7 @@ b{
   </div>
 
 
-  <!-- 10 LEFT -->
+  <!-- 10 -->
 
   <div class="storeButton">
 
@@ -2112,7 +1870,7 @@ b{
   </div>
 
 
-  <!-- 11 RIGHT -->
+  <!-- 11 -->
 
   <div class="storeButton">
 
@@ -2136,11 +1894,59 @@ b{
   </div>
 
 
+  <!-- 12 -->
+
+  <div class="storeButton">
+
+    <a
+      href="#"
+      onclick="return false;"
+      aria-label="Soon"
+    >
+
+      <img
+        src="zzz.png"
+        alt="Soon"
+      >
+
+    </a>
+
+    <div class="storeText">
+      Soon
+    </div>
+
+  </div>
+
+
+  <!-- 13 -->
+
+  <div class="storeButton">
+
+    <a
+      href="#"
+      onclick="return false;"
+      aria-label="Soon"
+    >
+
+      <img
+        src="zzz.png"
+        alt="Soon"
+      >
+
+    </a>
+
+    <div class="storeText">
+      Soon
+    </div>
+
+  </div>
+
+
 </div>
 
 
 <!-- =======================================================
-     DIAMOND STAR GENERATOR
+     STAR GENERATOR
      ======================================================= -->
 
 <script>
@@ -2151,7 +1957,6 @@ b{
     document.getElementById(
       "diamondStars"
     );
-
 
   if(!container){
     return;
@@ -2181,20 +1986,16 @@ b{
 
 
     if(random > 0.82){
-
       star.classList.add(
         "bright"
       );
-
     }
 
 
     if(random > 0.94){
-
       star.classList.add(
         "star"
       );
-
     }
 
 
@@ -2278,9 +2079,8 @@ b{
 
 
 <!-- =======================================================
-     BEE.PNG GENERATOR
-     7 БДЖІЛ
-     БІЛЬШІ + ПОВІЛЬНІ
+     BEE GENERATOR
+     7 LARGE, SLOW BEES
      ======================================================= -->
 
 <script>
@@ -2297,10 +2097,6 @@ b{
     return;
   }
 
-
-  /*
-   Рівно максимум 7 бджіл
-  */
 
   const beeCount = 7;
 
@@ -2321,10 +2117,6 @@ b{
     bee.alt =
       "";
 
-
-    /*
-     Випадковий великий розмір
-    */
 
     const sizeRandom =
       Math.random();
@@ -2357,16 +2149,12 @@ b{
     );
 
 
-    /*
-     Початкова позиція
-    */
-
     const startX =
       Math.random()
       *
       Math.max(
         1,
-        window.innerWidth - 80
+        window.innerWidth - 120
       );
 
 
@@ -2375,7 +2163,7 @@ b{
       *
       Math.max(
         1,
-        window.innerHeight - 80
+        window.innerHeight - 120
       );
 
 
@@ -2390,10 +2178,6 @@ b{
       +
       "px,0)";
 
-
-    /*
-     Різний момент старту
-    */
 
     setTimeout(
 
@@ -2423,12 +2207,7 @@ b{
   ){
 
 
-    /*
-     Відступ, щоб бджілка
-     не обрізалась краями
-    */
-
-    const padding = 80;
+    const padding = 110;
 
 
     const availableWidth =
@@ -2453,13 +2232,6 @@ b{
       );
 
 
-    /*
-     Нова хаотична точка:
-     вліво / вправо /
-     вверх / вниз /
-     по діагоналі
-    */
-
     const nextX =
       padding
       +
@@ -2482,10 +2254,6 @@ b{
       currentX;
 
 
-    /*
-     Легкий нахил
-    */
-
     const rotation =
       (
         Math.random()
@@ -2495,12 +2263,6 @@ b{
       -
       10;
 
-
-    /*
-     ЩЕ ПОВІЛЬНІШЕ:
-     приблизно 12–20 секунд
-     до наступної точки
-    */
 
     const duration =
       12000
@@ -2616,5 +2378,4 @@ b{
 
 
 </body>
-
 </html>
