@@ -54,7 +54,6 @@ body{
   overflow:hidden;
 }
 
-
 .sparkle{
   position:absolute;
 
@@ -82,7 +81,6 @@ body{
   transform:scale(var(--scale));
 }
 
-
 .sparkle.bright{
   width:3px;
   height:3px;
@@ -95,7 +93,6 @@ body{
     0 0 22px rgba(255,255,255,0.90),
     0 0 34px rgba(255,255,255,0.55);
 }
-
 
 .sparkle.star::before,
 .sparkle.star::after{
@@ -117,18 +114,15 @@ body{
     0 0 14px rgba(255,255,255,0.85);
 }
 
-
 .sparkle.star::before{
   width:1.5px;
   height:13px;
 }
 
-
 .sparkle.star::after{
   width:13px;
   height:1.5px;
 }
-
 
 @keyframes diamondTwinkle{
 
@@ -167,7 +161,7 @@ body{
 
 
 /* =========================================================
-   FLYING BEE STICKERS 🐝
+   FLYING BEE STICKERS — bee.png
    ========================================================= */
 
 .beesLayer{
@@ -181,332 +175,43 @@ body{
   overflow:hidden;
 }
 
-
 .bee{
   position:absolute;
 
-  line-height:1;
+  left:0;
+  top:0;
 
-  opacity:0.96;
+  height:auto;
+
+  opacity:0.95;
 
   user-select:none;
+
+  pointer-events:none;
 
   will-change:transform;
 
   filter:
     drop-shadow(
-      0 2px 3px
-      rgba(91,47,34,0.10)
+      0 1px 2px
+      rgba(91,47,34,0.12)
     )
     drop-shadow(
-      0 0 5px
-      rgba(255,255,255,0.35)
+      0 0 3px
+      rgba(255,255,255,0.25)
     );
 }
 
-
-/* Bee 1 */
-
-.bee1{
-  top:14%;
-  left:-100px;
-
-  font-size:52px;
-
-  animation:
-    beeFlightOne
-    18s
-    linear
-    infinite;
+.bee.small{
+  width:18px;
 }
 
-
-/* Bee 2 */
-
-.bee2{
-  top:38%;
-  right:-100px;
-
-  font-size:44px;
-
-  animation:
-    beeFlightTwo
-    22s
-    linear
-    infinite
-    3s;
+.bee.medium{
+  width:24px;
 }
 
-
-/* Bee 3 */
-
-.bee3{
-  top:68%;
-  left:-100px;
-
-  font-size:58px;
-
-  animation:
-    beeFlightThree
-    25s
-    linear
-    infinite
-    7s;
-}
-
-
-/* Bee 4 */
-
-.bee4{
-  top:27%;
-  left:-110px;
-
-  font-size:40px;
-
-  animation:
-    beeFlightFour
-    28s
-    linear
-    infinite
-    11s;
-}
-
-
-/* Bee 5 */
-
-.bee5{
-  top:82%;
-  right:-100px;
-
-  font-size:48px;
-
-  animation:
-    beeFlightFive
-    24s
-    linear
-    infinite
-    5s;
-}
-
-
-/* =========================================================
-   BEE FLIGHT
-   ========================================================= */
-
-@keyframes beeFlightOne{
-
-  0%{
-    transform:
-      translate3d(0,0,0)
-      rotate(-8deg);
-  }
-
-  18%{
-    transform:
-      translate3d(24vw,-24px,0)
-      rotate(7deg);
-  }
-
-  38%{
-    transform:
-      translate3d(48vw,20px,0)
-      rotate(-5deg);
-  }
-
-  60%{
-    transform:
-      translate3d(74vw,-18px,0)
-      rotate(8deg);
-  }
-
-  82%{
-    transform:
-      translate3d(98vw,18px,0)
-      rotate(-4deg);
-  }
-
-  100%{
-    transform:
-      translate3d(
-        calc(100vw + 160px),
-        -8px,
-        0
-      )
-      rotate(4deg);
-  }
-
-}
-
-
-@keyframes beeFlightTwo{
-
-  0%{
-    transform:
-      translate3d(0,0,0)
-      scaleX(-1)
-      rotate(-5deg);
-  }
-
-  20%{
-    transform:
-      translate3d(-25vw,18px,0)
-      scaleX(-1)
-      rotate(7deg);
-  }
-
-  42%{
-    transform:
-      translate3d(-51vw,-20px,0)
-      scaleX(-1)
-      rotate(-4deg);
-  }
-
-  66%{
-    transform:
-      translate3d(-77vw,14px,0)
-      scaleX(-1)
-      rotate(8deg);
-  }
-
-  100%{
-    transform:
-      translate3d(
-        calc(-100vw - 160px),
-        -14px,
-        0
-      )
-      scaleX(-1)
-      rotate(-5deg);
-  }
-
-}
-
-
-@keyframes beeFlightThree{
-
-  0%{
-    transform:
-      translate3d(0,0,0)
-      rotate(-10deg);
-  }
-
-  24%{
-    transform:
-      translate3d(28vw,25px,0)
-      rotate(6deg);
-  }
-
-  48%{
-    transform:
-      translate3d(54vw,-18px,0)
-      rotate(-5deg);
-  }
-
-  72%{
-    transform:
-      translate3d(80vw,12px,0)
-      rotate(7deg);
-  }
-
-  100%{
-    transform:
-      translate3d(
-        calc(100vw + 170px),
-        -26px,
-        0
-      )
-      rotate(-6deg);
-  }
-
-}
-
-
-@keyframes beeFlightFour{
-
-  0%{
-    transform:
-      translate3d(0,0,0)
-      rotate(-4deg);
-  }
-
-  20%{
-    transform:
-      translate3d(20vw,-30px,0)
-      rotate(8deg);
-  }
-
-  40%{
-    transform:
-      translate3d(42vw,14px,0)
-      rotate(-6deg);
-  }
-
-  64%{
-    transform:
-      translate3d(68vw,-16px,0)
-      rotate(8deg);
-  }
-
-  82%{
-    transform:
-      translate3d(88vw,20px,0)
-      rotate(-5deg);
-  }
-
-  100%{
-    transform:
-      translate3d(
-        calc(100vw + 170px),
-        -8px,
-        0
-      )
-      rotate(5deg);
-  }
-
-}
-
-
-@keyframes beeFlightFive{
-
-  0%{
-    transform:
-      translate3d(0,0,0)
-      scaleX(-1)
-      rotate(-6deg);
-  }
-
-  22%{
-    transform:
-      translate3d(-24vw,-18px,0)
-      scaleX(-1)
-      rotate(7deg);
-  }
-
-  45%{
-    transform:
-      translate3d(-49vw,24px,0)
-      scaleX(-1)
-      rotate(-6deg);
-  }
-
-  70%{
-    transform:
-      translate3d(-76vw,-20px,0)
-      scaleX(-1)
-      rotate(8deg);
-  }
-
-  100%{
-    transform:
-      translate3d(
-        calc(-100vw - 170px),
-        10px,
-        0
-      )
-      scaleX(-1)
-      rotate(-5deg);
-  }
-
+.bee.large{
+  width:30px;
 }
 
 
@@ -534,7 +239,6 @@ body{
     0 2px 10px
     rgba(0,0,0,0.08);
 }
-
 
 .menu a{
   margin:0 18px;
@@ -586,11 +290,9 @@ body{
   letter-spacing:0.3px;
 }
 
-
 p{
   margin:0 0 22px 0;
 }
-
 
 ul{
   margin:8px 0 24px 28px;
@@ -598,11 +300,9 @@ ul{
   padding-left:20px;
 }
 
-
 li{
   margin-bottom:10px;
 }
-
 
 .centerTitle{
   text-align:center;
@@ -616,7 +316,6 @@ li{
   color:var(--brown);
 }
 
-
 h3{
   font-size:22px;
 
@@ -627,19 +326,16 @@ h3{
   color:var(--brown);
 }
 
-
 a{
   color:var(--brown);
 
   word-break:break-word;
 }
 
-
 strong,
 b{
   font-weight:900;
 }
-
 
 .separator{
   text-align:left;
@@ -652,16 +348,17 @@ b{
 
 /* =========================================================
    PAW BUTTONS
+   вертикально, шахматний порядок
    ========================================================= */
 
 .buttons{
   position:fixed;
 
-  top:72px;
-
   right:10px;
 
-  bottom:14px;
+  top:72px;
+
+  bottom:18px;
 
   display:flex;
 
@@ -676,9 +373,10 @@ b{
   pointer-events:none;
 }
 
-
 .storeButton{
   text-align:center;
+
+  margin-bottom:2px;
 
   opacity:0;
 
@@ -689,24 +387,21 @@ b{
     forwards;
 
   pointer-events:auto;
-
-  flex:0 1 auto;
-
-  min-height:0;
 }
 
+
+/* шахматний слід */
 
 .storeButton:nth-child(odd){
-  transform:
-    translateX(0);
+  transform:translateX(0);
 }
-
 
 .storeButton:nth-child(even){
-  transform:
-    translateX(-30px);
+  transform:translateX(-22px);
 }
 
+
+/* поява лапок */
 
 .storeButton:nth-child(1){
   animation-delay:0.10s;
@@ -753,51 +448,37 @@ b{
 }
 
 
-.storeButton img{
-  width:
-    clamp(
-      42px,
-      5.1vh,
-      62px
-    );
+/* лапки */
 
-  max-height:6vh;
+.storeButton img{
+  width:50px;
+  height:auto;
 
   cursor:pointer;
 
   display:block;
 
   margin:auto;
-
-  object-fit:contain;
-
-  filter:
-    drop-shadow(
-      0 0 6px
-      rgba(255,255,255,0.50)
-    );
 }
-
 
 .storeText{
   font-size:9px;
 
   font-weight:900;
 
-  margin-top:-4px;
+  margin-top:-5px;
 
-  line-height:0.92;
+  line-height:0.9;
 
   white-space:nowrap;
 
   color:var(--brown);
 
   text-shadow:
-    0 0 5px rgba(255,255,255,1),
-    0 0 10px rgba(255,255,255,0.95),
-    0 0 16px rgba(255,255,255,0.85);
+    0 0 5px rgba(255,255,255,0.95),
+    0 0 10px rgba(255,255,255,0.9),
+    0 0 16px rgba(255,255,255,0.8);
 }
-
 
 @keyframes pawAppear{
 
@@ -826,51 +507,47 @@ b{
 @media (min-width:901px){
 
   .buttons{
-    right:20px;
-    top:76px;
-    bottom:22px;
+    right:18px;
+
+    top:72px;
+
+    bottom:28px;
   }
 
-
-  .storeButton:nth-child(even){
-    transform:
-      translateX(-38px);
+  .storeButton{
+    margin-bottom:2px;
   }
-
 
   .storeButton img{
-    width:
-      clamp(
-        48px,
-        5.4vh,
-        66px
-      );
+    width:60px;
   }
-
 
   .storeText{
     font-size:9px;
+
+    margin-top:-5px;
+
+    line-height:0.9;
   }
 
-
-  .bee1{
-    font-size:58px;
+  .storeButton:nth-child(odd){
+    transform:translateX(0);
   }
 
-  .bee2{
-    font-size:48px;
+  .storeButton:nth-child(even){
+    transform:translateX(-20px);
   }
 
-  .bee3{
-    font-size:64px;
+  .bee.small{
+    width:20px;
   }
 
-  .bee4{
-    font-size:44px;
+  .bee.medium{
+    width:26px;
   }
 
-  .bee5{
-    font-size:52px;
+  .bee.large{
+    width:32px;
   }
 
 }
@@ -888,23 +565,19 @@ b{
     font-size:18px;
   }
 
-
   .centerTitle{
     font-size:28px;
 
     margin:60px 0 28px 0;
   }
 
-
   h3{
     font-size:24px;
   }
 
-
   .menu{
     padding:12px 6px;
   }
-
 
   .menu a{
     margin:0 7px;
@@ -912,64 +585,48 @@ b{
     font-size:14px;
   }
 
-
   .header{
     margin-top:56px;
   }
 
-
   .buttons{
-    right:4px;
+    right:6px;
 
-    top:66px;
+    top:65px;
 
-    bottom:12px;
+    bottom:22px;
   }
-
-
-  .storeButton:nth-child(even){
-    transform:
-      translateX(-24px);
-  }
-
 
   .storeButton img{
-    width:
-      clamp(
-        38px,
-        4.8vh,
-        52px
-      );
-
-    max-height:5.6vh;
+    width:50px;
   }
-
 
   .storeText{
-    font-size:7.8px;
+    font-size:9px;
 
-    margin-top:-3px;
+    margin-top:-4px;
+
+    line-height:0.95;
   }
 
-
-  .bee1{
-    font-size:46px;
+  .storeButton:nth-child(odd){
+    transform:translateX(0);
   }
 
-  .bee2{
-    font-size:38px;
+  .storeButton:nth-child(even){
+    transform:translateX(-18px);
   }
 
-  .bee3{
-    font-size:50px;
+  .bee.small{
+    width:16px;
   }
 
-  .bee4{
-    font-size:36px;
+  .bee.medium{
+    width:21px;
   }
 
-  .bee5{
-    font-size:42px;
+  .bee.large{
+    width:26px;
   }
 
 }
@@ -984,27 +641,21 @@ b{
   .buttons{
     top:62px;
 
-    bottom:7px;
+    bottom:8px;
   }
-
 
   .storeButton img{
-    width:36px;
-
-    max-height:4.8vh;
+    width:42px;
   }
 
-
   .storeText{
-    font-size:6.8px;
+    font-size:7px;
 
     margin-top:-3px;
   }
 
-
   .storeButton:nth-child(even){
-    transform:
-      translateX(-20px);
+    transform:translateX(-16px);
   }
 
 }
@@ -1018,17 +669,17 @@ b{
 
   .sparkle{
     animation:none;
+
     opacity:0.35;
   }
-
 
   .bee{
     display:none;
   }
 
-
   .storeButton{
     animation:none;
+
     opacity:1;
   }
 
@@ -1050,35 +701,14 @@ b{
 
 
 <!-- =======================================================
-     FLYING BEE STICKERS 🐝
+     FLYING BEE.PNG STICKERS
      ======================================================= -->
 
 <div
   class="beesLayer"
+  id="beesLayer"
   aria-hidden="true"
->
-
-  <div class="bee bee1">
-    🐝
-  </div>
-
-  <div class="bee bee2">
-    🐝
-  </div>
-
-  <div class="bee bee3">
-    🐝
-  </div>
-
-  <div class="bee bee4">
-    🐝
-  </div>
-
-  <div class="bee bee5">
-    🐝
-  </div>
-
-</div>
+></div>
 
 
 <!-- =======================================================
@@ -1245,29 +875,17 @@ b{
       (name, email address, postal address, phone number)
     </li>
 
-    <li>
-      Financial information
-    </li>
+    <li>Financial information</li>
 
-    <li>
-      Location data
-    </li>
+    <li>Location data</li>
 
-    <li>
-      Contact information
-    </li>
+    <li>Contact information</li>
 
-    <li>
-      Browsing history
-    </li>
+    <li>Browsing history</li>
 
-    <li>
-      Advertising identifiers
-    </li>
+    <li>Advertising identifiers</li>
 
-    <li>
-      Analytics data
-    </li>
+    <li>Analytics data</li>
 
     <li>
       Any data stored on your device outside of the App
@@ -1600,29 +1218,17 @@ b{
       (name, email address, phone number, postal address)
     </li>
 
-    <li>
-      Financial information
-    </li>
+    <li>Financial information</li>
 
-    <li>
-      Location data
-    </li>
+    <li>Location data</li>
 
-    <li>
-      Contact lists
-    </li>
+    <li>Contact lists</li>
 
-    <li>
-      Browsing history
-    </li>
+    <li>Browsing history</li>
 
-    <li>
-      Advertising identifiers
-    </li>
+    <li>Advertising identifiers</li>
 
-    <li>
-      Analytics data
-    </li>
+    <li>Analytics data</li>
 
     <li>
       Any data stored on your device outside of the App
@@ -1898,21 +1504,13 @@ b{
       (name, email address, phone number, postal address)
     </li>
 
-    <li>
-      Financial information
-    </li>
+    <li>Financial information</li>
 
-    <li>
-      Advertising identifiers
-    </li>
+    <li>Advertising identifiers</li>
 
-    <li>
-      Browsing history
-    </li>
+    <li>Browsing history</li>
 
-    <li>
-      Tracking or analytics data
-    </li>
+    <li>Tracking or analytics data</li>
 
   </ul>
 
@@ -1943,11 +1541,17 @@ b{
 
     <li>draw and create illustrations</li>
 
-    <li>save drawings only to the device’s photo gallery</li>
+    <li>
+      save drawings only to the device’s photo gallery
+    </li>
 
-    <li>view a built-in gallery of bear illustrations</li>
+    <li>
+      view a built-in gallery of bear illustrations
+    </li>
 
-    <li>store notes using cloud synchronization (iCloud)</li>
+    <li>
+      store notes using cloud synchronization (iCloud)
+    </li>
 
   </ul>
 
@@ -2443,11 +2047,9 @@ b{
       "diamondStars"
     );
 
-
   if(!container){
     return;
   }
-
 
   const totalStars =
     window.innerWidth <= 600
@@ -2466,10 +2068,8 @@ b{
         "span"
       );
 
-
     star.className =
       "sparkle";
-
 
     const random =
       Math.random();
@@ -2557,6 +2157,331 @@ b{
     );
 
   }
+
+})();
+
+</script>
+
+
+<!-- =======================================================
+     RANDOM BEE.PNG GENERATOR
+     ======================================================= -->
+
+<script>
+
+(function(){
+
+  const layer =
+    document.getElementById(
+      "beesLayer"
+    );
+
+  if(!layer){
+    return;
+  }
+
+
+  /*
+   Кількість бджілок:
+   телефон — 18
+   великий екран — 26
+  */
+
+  const beeCount =
+    window.innerWidth <= 600
+      ? 18
+      : 26;
+
+
+  for(
+    let i = 0;
+    i < beeCount;
+    i++
+  ){
+
+    /*
+     Створюємо ваш bee.png
+    */
+
+    const bee =
+      document.createElement(
+        "img"
+      );
+
+    bee.src =
+      "bee.png";
+
+    bee.alt =
+      "";
+
+
+    /*
+     Різні маленькі розміри
+    */
+
+    const sizeRandom =
+      Math.random();
+
+
+    if(
+      sizeRandom < 0.45
+    ){
+
+      bee.className =
+        "bee small";
+
+    }
+
+    else if(
+      sizeRandom < 0.85
+    ){
+
+      bee.className =
+        "bee medium";
+
+    }
+
+    else{
+
+      bee.className =
+        "bee large";
+
+    }
+
+
+    layer.appendChild(
+      bee
+    );
+
+
+    /*
+     Початкова випадкова позиція
+    */
+
+    const startX =
+      Math.random()
+      *
+      window.innerWidth;
+
+
+    const startY =
+      Math.random()
+      *
+      window.innerHeight;
+
+
+    bee.style.transform =
+      "translate3d("
+      +
+      startX
+      +
+      "px,"
+      +
+      startY
+      +
+      "px,0)";
+
+
+    /*
+     Усі починають у різний час
+    */
+
+    setTimeout(
+      function(){
+
+        flyBee(
+          bee,
+          startX,
+          startY
+        );
+
+      },
+
+      Math.random()
+      *
+      4000
+
+    );
+
+  }
+
+
+  /*
+   Хаотичний політ:
+   вверх
+   вниз
+   вправо
+   вліво
+   по діагоналі
+  */
+
+  function flyBee(
+    bee,
+    currentX,
+    currentY
+  ){
+
+    /*
+     Наступне випадкове місце
+    */
+
+    const nextX =
+      Math.random()
+      *
+      window.innerWidth;
+
+
+    const nextY =
+      Math.random()
+      *
+      window.innerHeight;
+
+
+    /*
+     Куди летить
+    */
+
+    const goingLeft =
+      nextX
+      <
+      currentX;
+
+
+    /*
+     Невеликий нахил
+    */
+
+    const rotation =
+      (
+        Math.random()
+        *
+        28
+      )
+      -
+      14;
+
+
+    /*
+     Випадкова швидкість
+    */
+
+    const duration =
+      4200
+      +
+      Math.random()
+      *
+      6500;
+
+
+    /*
+     Якщо летить вліво —
+     повертаємо стікер
+    */
+
+    const direction =
+      goingLeft
+        ? -1
+        : 1;
+
+
+    const animation =
+      bee.animate(
+
+        [
+
+          {
+
+            transform:
+
+              "translate3d("
+              +
+              currentX
+              +
+              "px,"
+              +
+              currentY
+              +
+              "px,0) "
+              +
+              "scaleX("
+              +
+              direction
+              +
+              ") "
+              +
+              "rotate("
+              +
+              (-rotation)
+              +
+              "deg)"
+
+          },
+
+
+          {
+
+            transform:
+
+              "translate3d("
+              +
+              nextX
+              +
+              "px,"
+              +
+              nextY
+              +
+              "px,0) "
+              +
+              "scaleX("
+              +
+              direction
+              +
+              ") "
+              +
+              "rotate("
+              +
+              rotation
+              +
+              "deg)"
+
+          }
+
+        ],
+
+        {
+
+          duration:
+            duration,
+
+          easing:
+            "ease-in-out",
+
+          fill:
+            "forwards"
+
+        }
+
+      );
+
+
+    /*
+     Після завершення —
+     вибирає новий напрямок
+    */
+
+    animation.onfinish =
+      function(){
+
+        flyBee(
+          bee,
+          nextX,
+          nextY
+        );
+
+      };
+
+  }
+
 
 })();
 
