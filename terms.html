@@ -14,6 +14,7 @@
 Terms of Use — Bear Boutigue
 </title>
 
+
 <style>
 
 :root{
@@ -21,9 +22,11 @@ Terms of Use — Bear Boutigue
   --brown: rgb(91,47,34);
 }
 
+
 *{
   box-sizing:border-box;
 }
+
 
 html,
 body{
@@ -32,8 +35,11 @@ body{
   min-height:100%;
 }
 
+
 body{
+
   background-color:var(--pink-bg);
+
   margin:0;
 
   font-family:
@@ -55,7 +61,9 @@ body{
    ========================================================= */
 
 #diamondStars{
+
   position:fixed;
+
   inset:0;
 
   z-index:1;
@@ -65,7 +73,9 @@ body{
   overflow:hidden;
 }
 
+
 .sparkle{
+
   position:absolute;
 
   width:2px;
@@ -92,7 +102,9 @@ body{
   transform:scale(var(--scale));
 }
 
+
 .sparkle.bright{
+
   width:3px;
   height:3px;
 
@@ -105,8 +117,10 @@ body{
     0 0 34px rgba(255,255,255,0.55);
 }
 
+
 .sparkle.star::before,
 .sparkle.star::after{
+
   content:"";
 
   position:absolute;
@@ -125,15 +139,20 @@ body{
     0 0 14px rgba(255,255,255,0.85);
 }
 
+
 .sparkle.star::before{
+
   width:1.5px;
   height:13px;
 }
 
+
 .sparkle.star::after{
+
   width:13px;
   height:1.5px;
 }
+
 
 @keyframes diamondTwinkle{
 
@@ -173,11 +192,14 @@ body{
 
 /* =========================================================
    FLYING BEE.PNG
-   15 великих повільних бджіл
+   максимум 7
+   великі + повільні
    ========================================================= */
 
 .beesLayer{
+
   position:fixed;
+
   inset:0;
 
   z-index:6;
@@ -187,7 +209,9 @@ body{
   overflow:hidden;
 }
 
+
 .bee{
+
   position:absolute;
 
   left:0;
@@ -214,13 +238,16 @@ body{
     );
 }
 
+
 .bee.small{
   width:58px;
 }
 
+
 .bee.medium{
   width:76px;
 }
+
 
 .bee.large{
   width:96px;
@@ -232,6 +259,7 @@ body{
    ========================================================= */
 
 .content{
+
   position:relative;
 
   z-index:10;
@@ -243,7 +271,9 @@ body{
   padding:60px 40px 100px 40px;
 }
 
+
 .title{
+
   text-align:center;
 
   font-size:34px;
@@ -253,7 +283,9 @@ body{
   margin-bottom:15px;
 }
 
+
 .updated{
+
   text-align:center;
 
   font-size:16px;
@@ -261,7 +293,9 @@ body{
   margin-bottom:50px;
 }
 
+
 .sectionTitle{
+
   font-size:24px;
 
   font-weight:bold;
@@ -271,21 +305,27 @@ body{
   margin-bottom:15px;
 }
 
+
 p{
   margin:15px 0;
 }
 
+
 ul{
+
   margin:15px 0 20px 25px;
 
   padding-left:20px;
 }
 
+
 li{
   margin-bottom:10px;
 }
 
+
 a{
+
   color:var(--brown);
 
   font-weight:bold;
@@ -322,6 +362,7 @@ a{
 @media (max-width:900px){
 
   .content{
+
     padding:
       45px
       24px
@@ -329,21 +370,26 @@ a{
       24px;
   }
 
+
   .title{
     font-size:30px;
   }
+
 
   .sectionTitle{
     font-size:22px;
   }
 
+
   .bee.small{
     width:48px;
   }
 
+
   .bee.medium{
     width:64px;
   }
+
 
   .bee.large{
     width:82px;
@@ -359,10 +405,12 @@ a{
 @media (prefers-reduced-motion:reduce){
 
   .sparkle{
+
     animation:none;
 
     opacity:0.35;
   }
+
 
   .bee{
     display:none;
@@ -386,7 +434,7 @@ a{
 
 
 <!-- =======================================================
-     15 FLYING BEES
+     FLYING BEES
      ======================================================= -->
 
 <div
@@ -397,7 +445,7 @@ a{
 
 
 <!-- =======================================================
-     TERMS OF USE
+     TERMS
      ======================================================= -->
 
 <div class="content">
@@ -1052,27 +1100,34 @@ Bear Boutigue
       "diamondStars"
     );
 
+
   if(!container){
     return;
   }
+
 
   const totalStars =
     window.innerWidth <= 600
       ? 120
       : 200;
 
+
   for(let i = 0; i < totalStars; i++){
+
 
     const star =
       document.createElement(
         "span"
       );
 
+
     star.className =
       "sparkle";
 
+
     const random =
       Math.random();
+
 
     if(random > 0.82){
 
@@ -1082,6 +1137,7 @@ Bear Boutigue
 
     }
 
+
     if(random > 0.94){
 
       star.classList.add(
@@ -1089,6 +1145,7 @@ Bear Boutigue
       );
 
     }
+
 
     star.style.left =
       (
@@ -1099,6 +1156,7 @@ Bear Boutigue
       +
       "%";
 
+
     star.style.top =
       (
         Math.random()
@@ -1107,6 +1165,7 @@ Bear Boutigue
       )
       +
       "%";
+
 
     star.style.setProperty(
 
@@ -1124,6 +1183,7 @@ Bear Boutigue
 
     );
 
+
     star.style.setProperty(
 
       "--delay",
@@ -1137,6 +1197,7 @@ Bear Boutigue
       "s"
 
     );
+
 
     star.style.setProperty(
 
@@ -1153,6 +1214,7 @@ Bear Boutigue
 
     );
 
+
     container.appendChild(
       star
     );
@@ -1166,7 +1228,7 @@ Bear Boutigue
 
 <!-- =======================================================
      BEE.PNG GENERATOR
-     15 LARGE SLOW BEES
+     7 LARGE SLOW BEES
      ======================================================= -->
 
 <script>
@@ -1178,35 +1240,31 @@ Bear Boutigue
       "beesLayer"
     );
 
+
   if(!layer){
     return;
   }
 
 
-  /*
-   15 бджіл
-  */
-
-  const beeCount = 15;
+  const beeCount = 7;
 
 
   for(let i = 0; i < beeCount; i++){
+
 
     const bee =
       document.createElement(
         "img"
       );
 
+
     bee.src =
       "bee.png";
+
 
     bee.alt =
       "";
 
-
-    /*
-     Різні великі розміри
-    */
 
     const sizeRandom =
       Math.random();
@@ -1239,10 +1297,6 @@ Bear Boutigue
     );
 
 
-    /*
-     Початкова випадкова позиція
-    */
-
     const startX =
       Math.random()
       *
@@ -1273,11 +1327,6 @@ Bear Boutigue
       "px,0)";
 
 
-    /*
-     Починають літати
-     не одночасно
-    */
-
     setTimeout(
 
       function(){
@@ -1305,11 +1354,6 @@ Bear Boutigue
     currentY
   ){
 
-    /*
-     Відступ від краю,
-     щоб великі бджілки
-     не обрізалися
-    */
 
     const padding = 110;
 
@@ -1336,13 +1380,6 @@ Bear Boutigue
       );
 
 
-    /*
-     Випадкова нова точка
-     вверх / вниз /
-     вправо / вліво /
-     по діагоналі
-    */
-
     const nextX =
       padding
       +
@@ -1365,10 +1402,6 @@ Bear Boutigue
       currentX;
 
 
-    /*
-     Невеликий нахил
-    */
-
     const rotation =
       (
         Math.random()
@@ -1379,11 +1412,6 @@ Bear Boutigue
       10;
 
 
-    /*
-     Повільний політ:
-     приблизно 12–20 секунд
-    */
-
     const duration =
       12000
       +
@@ -1391,11 +1419,6 @@ Bear Boutigue
       *
       8000;
 
-
-    /*
-     Повертає бджілку
-     в напрямку польоту
-    */
 
     const direction =
       goingLeft
@@ -1495,6 +1518,7 @@ Bear Boutigue
       };
 
   }
+
 
 })();
 
