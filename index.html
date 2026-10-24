@@ -162,56 +162,45 @@ body{
 
 /* =========================================================
    FLYING BEE STICKERS — bee.png
+   максимум 7, більші, повільніші
    ========================================================= */
 
 .beesLayer{
   position:fixed;
   inset:0;
-
   z-index:6;
-
   pointer-events:none;
-
   overflow:hidden;
 }
 
 .bee{
   position:absolute;
-
   left:0;
   top:0;
-
   height:auto;
 
-  opacity:0.95;
+  opacity:0.96;
 
   user-select:none;
-
   pointer-events:none;
 
   will-change:transform;
 
   filter:
-    drop-shadow(
-      0 1px 2px
-      rgba(91,47,34,0.12)
-    )
-    drop-shadow(
-      0 0 3px
-      rgba(255,255,255,0.25)
-    );
+    drop-shadow(0 1px 2px rgba(91,47,34,0.12))
+    drop-shadow(0 0 4px rgba(255,255,255,0.30));
 }
 
 .bee.small{
-  width:18px;
+  width:28px;
 }
 
 .bee.medium{
-  width:24px;
+  width:36px;
 }
 
 .bee.large{
-  width:30px;
+  width:46px;
 }
 
 
@@ -236,8 +225,7 @@ body{
   z-index:100;
 
   box-shadow:
-    0 2px 10px
-    rgba(0,0,0,0.08);
+    0 2px 10px rgba(0,0,0,0.08);
 }
 
 .menu a{
@@ -348,24 +336,20 @@ b{
 
 /* =========================================================
    PAW BUTTONS
-   вертикально, шахматний порядок
+   більші, вертикально, шахматно
    ========================================================= */
 
 .buttons{
   position:fixed;
 
-  right:10px;
-
-  top:72px;
-
-  bottom:18px;
+  right:8px;
+  top:76px;
+  bottom:10px;
 
   display:flex;
-
   flex-direction:column;
 
   justify-content:space-between;
-
   align-items:flex-end;
 
   z-index:70;
@@ -376,7 +360,7 @@ b{
 .storeButton{
   text-align:center;
 
-  margin-bottom:2px;
+  margin:0;
 
   opacity:0;
 
@@ -387,21 +371,17 @@ b{
     forwards;
 
   pointer-events:auto;
+
+  flex:0 1 auto;
 }
-
-
-/* шахматний слід */
 
 .storeButton:nth-child(odd){
   transform:translateX(0);
 }
 
 .storeButton:nth-child(even){
-  transform:translateX(-22px);
+  transform:translateX(-34px);
 }
-
-
-/* поява лапок */
 
 .storeButton:nth-child(1){
   animation-delay:0.10s;
@@ -447,11 +427,9 @@ b{
   animation-delay:1.10s;
 }
 
-
-/* лапки */
-
 .storeButton img{
-  width:50px;
+  width:clamp(52px,7.8vh,96px);
+
   height:auto;
 
   cursor:pointer;
@@ -462,13 +440,13 @@ b{
 }
 
 .storeText{
-  font-size:9px;
+  font-size:clamp(7px,0.9vh,11px);
 
   font-weight:900;
 
-  margin-top:-5px;
+  margin-top:-6px;
 
-  line-height:0.9;
+  line-height:0.92;
 
   white-space:nowrap;
 
@@ -507,27 +485,9 @@ b{
 @media (min-width:901px){
 
   .buttons{
-    right:18px;
-
-    top:72px;
-
-    bottom:28px;
-  }
-
-  .storeButton{
-    margin-bottom:2px;
-  }
-
-  .storeButton img{
-    width:60px;
-  }
-
-  .storeText{
-    font-size:9px;
-
-    margin-top:-5px;
-
-    line-height:0.9;
+    right:16px;
+    top:78px;
+    bottom:10px;
   }
 
   .storeButton:nth-child(odd){
@@ -535,19 +495,31 @@ b{
   }
 
   .storeButton:nth-child(even){
-    transform:translateX(-20px);
+    transform:translateX(-38px);
+  }
+
+  .storeButton img{
+    width:clamp(60px,8vh,104px);
+  }
+
+  .storeText{
+    font-size:clamp(7px,0.95vh,11px);
+
+    margin-top:-6px;
+
+    line-height:0.92;
   }
 
   .bee.small{
-    width:20px;
+    width:32px;
   }
 
   .bee.medium{
-    width:26px;
+    width:40px;
   }
 
   .bee.large{
-    width:32px;
+    width:50px;
   }
 
 }
@@ -590,23 +562,9 @@ b{
   }
 
   .buttons{
-    right:6px;
-
-    top:65px;
-
-    bottom:22px;
-  }
-
-  .storeButton img{
-    width:50px;
-  }
-
-  .storeText{
-    font-size:9px;
-
-    margin-top:-4px;
-
-    line-height:0.95;
+    right:4px;
+    top:66px;
+    bottom:8px;
   }
 
   .storeButton:nth-child(odd){
@@ -614,19 +572,31 @@ b{
   }
 
   .storeButton:nth-child(even){
-    transform:translateX(-18px);
+    transform:translateX(-22px);
+  }
+
+  .storeButton img{
+    width:clamp(42px,6.3vh,72px);
+  }
+
+  .storeText{
+    font-size:clamp(6px,0.95vh,9px);
+
+    margin-top:-4px;
+
+    line-height:0.95;
   }
 
   .bee.small{
-    width:16px;
+    width:24px;
   }
 
   .bee.medium{
-    width:21px;
+    width:30px;
   }
 
   .bee.large{
-    width:26px;
+    width:38px;
   }
 
 }
@@ -640,22 +610,21 @@ b{
 
   .buttons{
     top:62px;
-
-    bottom:8px;
-  }
-
-  .storeButton img{
-    width:42px;
-  }
-
-  .storeText{
-    font-size:7px;
-
-    margin-top:-3px;
+    bottom:6px;
   }
 
   .storeButton:nth-child(even){
-    transform:translateX(-16px);
+    transform:translateX(-18px);
+  }
+
+  .storeButton img{
+    width:clamp(36px,5.5vh,56px);
+  }
+
+  .storeText{
+    font-size:clamp(5.5px,0.85vh,8px);
+
+    margin-top:-3px;
   }
 
 }
@@ -669,7 +638,6 @@ b{
 
   .sparkle{
     animation:none;
-
     opacity:0.35;
   }
 
@@ -679,7 +647,6 @@ b{
 
   .storeButton{
     animation:none;
-
     opacity:1;
   }
 
@@ -701,7 +668,7 @@ b{
 
 
 <!-- =======================================================
-     FLYING BEE.PNG STICKERS
+     FLYING BEE.PNG
      ======================================================= -->
 
 <div
@@ -2056,12 +2023,7 @@ b{
       ? 120
       : 200;
 
-
-  for(
-    let i = 0;
-    i < totalStars;
-    i++
-  ){
+  for(let i = 0; i < totalStars; i++){
 
     const star =
       document.createElement(
@@ -2074,24 +2036,17 @@ b{
     const random =
       Math.random();
 
-
-    if(
-      random > 0.82
-    ){
+    if(random > 0.82){
       star.classList.add(
         "bright"
       );
     }
 
-
-    if(
-      random > 0.94
-    ){
+    if(random > 0.94){
       star.classList.add(
         "star"
       );
     }
-
 
     star.style.left =
       (
@@ -2100,14 +2055,12 @@ b{
       )
       + "%";
 
-
     star.style.top =
       (
         Math.random()
         * 100
       )
       + "%";
-
 
     star.style.setProperty(
 
@@ -2123,7 +2076,6 @@ b{
 
     );
 
-
     star.style.setProperty(
 
       "--delay",
@@ -2135,7 +2087,6 @@ b{
       + "s"
 
     );
-
 
     star.style.setProperty(
 
@@ -2151,7 +2102,6 @@ b{
 
     );
 
-
     container.appendChild(
       star
     );
@@ -2165,6 +2115,7 @@ b{
 
 <!-- =======================================================
      RANDOM BEE.PNG GENERATOR
+     максимум 7
      ======================================================= -->
 
 <script>
@@ -2181,27 +2132,10 @@ b{
   }
 
 
-  /*
-   Кількість бджілок:
-   телефон — 18
-   великий екран — 26
-  */
-
-  const beeCount =
-    window.innerWidth <= 600
-      ? 18
-      : 26;
+  const beeCount = 7;
 
 
-  for(
-    let i = 0;
-    i < beeCount;
-    i++
-  ){
-
-    /*
-     Створюємо ваш bee.png
-    */
+  for(let i = 0; i < beeCount; i++){
 
     const bee =
       document.createElement(
@@ -2215,26 +2149,18 @@ b{
       "";
 
 
-    /*
-     Різні маленькі розміри
-    */
-
     const sizeRandom =
       Math.random();
 
 
-    if(
-      sizeRandom < 0.45
-    ){
+    if(sizeRandom < 0.34){
 
       bee.className =
         "bee small";
 
     }
 
-    else if(
-      sizeRandom < 0.85
-    ){
+    else if(sizeRandom < 0.74){
 
       bee.className =
         "bee medium";
@@ -2253,10 +2179,6 @@ b{
       bee
     );
 
-
-    /*
-     Початкова випадкова позиція
-    */
 
     const startX =
       Math.random()
@@ -2282,10 +2204,6 @@ b{
       "px,0)";
 
 
-    /*
-     Усі починають у різний час
-    */
-
     setTimeout(
       function(){
 
@@ -2299,21 +2217,12 @@ b{
 
       Math.random()
       *
-      4000
+      3000
 
     );
 
   }
 
-
-  /*
-   Хаотичний політ:
-   вверх
-   вниз
-   вправо
-   вліво
-   по діагоналі
-  */
 
   function flyBee(
     bee,
@@ -2321,25 +2230,38 @@ b{
     currentY
   ){
 
-    /*
-     Наступне випадкове місце
-    */
+    const padding = 40;
+
 
     const nextX =
+      padding
+      +
       Math.random()
       *
-      window.innerWidth;
+      Math.max(
+        120,
+        window.innerWidth
+        -
+        padding
+        *
+        2
+      );
 
 
     const nextY =
+      padding
+      +
       Math.random()
       *
-      window.innerHeight;
+      Math.max(
+        120,
+        window.innerHeight
+        -
+        padding
+        *
+        2
+      );
 
-
-    /*
-     Куди летить
-    */
 
     const goingLeft =
       nextX
@@ -2347,36 +2269,29 @@ b{
       currentX;
 
 
-    /*
-     Невеликий нахил
-    */
-
     const rotation =
       (
         Math.random()
         *
-        28
+        20
       )
       -
-      14;
+      10;
 
 
     /*
-     Випадкова швидкість
+     повільніше:
+     приблизно 8,5–15 секунд
+     між кожною точкою
     */
 
     const duration =
-      4200
+      8500
       +
       Math.random()
       *
       6500;
 
-
-    /*
-     Якщо летить вліво —
-     повертаємо стікер
-    */
 
     const direction =
       goingLeft
@@ -2450,24 +2365,16 @@ b{
 
         {
 
-          duration:
-            duration,
+          duration:duration,
 
-          easing:
-            "ease-in-out",
+          easing:"ease-in-out",
 
-          fill:
-            "forwards"
+          fill:"forwards"
 
         }
 
       );
 
-
-    /*
-     Після завершення —
-     вибирає новий напрямок
-    */
 
     animation.onfinish =
       function(){
